@@ -2,6 +2,7 @@ package com.restaurant.model.bean;
 
 public abstract class Product {
 	private int id;
+    private String cuisine;
 	private String name;
 	private double price;
 	private String description;
@@ -39,7 +40,12 @@ public abstract class Product {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	
 
+    public String getCuisine() {
+        return cuisine;
+    }
+
+    public void setCuisine(String cuisine) {
+        this.cuisine = cuisine;
+    }
 }
