@@ -7,6 +7,18 @@ public class Food extends Product {
 
     public Food() {}
 
+    public Food(int id, String cuisine, String name, double price, String description, boolean vegetarian, boolean spicy, boolean allergens) {
+        super(id, cuisine, name, price, description);
+        this.vegetarian = vegetarian;
+        this.spicy = spicy;
+        this.allergens = allergens;
+    }
+
+    @Override
+    public String getInfo() {
+        return super.getInfo() + ", " + (vegetarian ? "vegetarian" : "non-vegetarian") + ", " + (spicy ? "spicy" : "non-spicy") + ", " + (allergens ? "allergens" : "non-allergens");
+    }
+
     public boolean isVegetarian() {
         return vegetarian;
     }
