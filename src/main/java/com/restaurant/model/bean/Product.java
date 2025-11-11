@@ -1,6 +1,6 @@
 package com.restaurant.model.bean;
 
-public class Product {
+public abstract class Product {
 	private int id;
 	private String name;
     private String cuisine;
