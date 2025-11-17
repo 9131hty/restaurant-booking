@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<toolchains>
+    <toolchain>
+        <type>jdk</type>
+        <provides>
+            <version>17</version>
+            <vendor>adoptium</vendor>
+        </provides>
+        <configuration>
+            <jdkHome>C:/path/to/jdk-17</jdkHome>
+        </configuration>
+    </toolchain>
+    <toolchain>
+        <type>jdk</type>
+        <provides>
+            <version>23</version>
+            <vendor>adoptium</vendor>
+        </provides>
+        <configuration>
+            <jdkHome>C:/path/to/jdk-23</jdkHome>
+        </configuration>
+    </toolchain>
+</toolchains>
