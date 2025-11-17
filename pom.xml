@@ -125,7 +125,6 @@
                     <toolchains>
                         <jdk>
                             <version>[17,23]</version>
-                            <vendor>adoptium</vendor>
                         </jdk>
                     </toolchains>
                 </configuration>
