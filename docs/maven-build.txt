@@ -1,2 +1,0 @@
-mvn -N wrapper:wrapper
-#then commit mvnw, mvnw.cmd, .mvn/
