@@ -901,12 +901,12 @@ body.gjs-t-body {
 }
 
 /* line: 647-652 */
-/* .hero-quick-links {
+.hero-quick-links {
     margin-top: 1rem;
     display: flex;
     align-items: center;
     gap: 1rem;
-} */
+}
 
 /* line: 654-666 */
 .quick-link-button {

@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -223,8 +224,8 @@
                     </div>
                 </div>
                 <div class="cart-actions" id="ifvmzq">
-                    <a href="../html/cart-checkout.html" class="gjs-t-button checkout-button" id="iphd53">Go to Checkout</a>
-                    <a href="./menu.html" class="gjs-t-link view-menu-link" id="icdqxl">Continue browsing</a>
+                    <a href="cart-checkout.jsp" class="gjs-t-button checkout-button" id="iphd53">Go to Checkout</a>
+                    <a href="menu.jsp" class="gjs-t-link view-menu-link" id="icdqxl">Continue browsing</a>
                 </div>
             </div>
         </aside>
