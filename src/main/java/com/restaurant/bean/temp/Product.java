@@ -1,4 +1,4 @@
-package com.restaurant.model.bean;
+package com.restaurant.bean.temp;
 
 public abstract class Product {
 	private int id;

@@ -1,4 +1,4 @@
-package com.restaurant.model.bean;
+package com.restaurant.bean.temp;
 
 public class Drink extends Product {
     private double volume;

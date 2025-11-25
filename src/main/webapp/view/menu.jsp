@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../css/menu.css">
     <script src="../js/header.js" defer></script>
     <script src="../js/footer.js" defer></script>
-    <script src="../js/menu.js" defer id="ivj3e5"></script>
+    <script src="../js/menu.js" defer></script>
 </head>
 
 <body class="gjs-t-body">
@@ -37,20 +37,20 @@
         </div>
         <div class="hero-image-wrapper" id="ifsgy9">
             <div class="gjs-t-border hero-image-card" id="iwxy51">
-                <img src="italian-cuisine_[INPUT]" alt="Maison di Sapori Dishes" class="hero-image" id="ig6sh6" />
+                <img src="../images/menu/italian-cuisine.jpg" alt="Maison di Sapori Dishes" class="hero-image" id="ig6sh6" />
             </div>
         </div>
     </section>
     <section class="gjs-t-border filters-section" id="i35qao">
         <div class="filters-header" id="ixetcm">
-            <img src="lucide-filters_[INPUT_icon]" alt="" class="filters-icon" id="imjdi2" />
+            <img src="../icons/menu/funnel.svg" alt="" class="filters-icon" id="imjdi2" />
             <h2 class="gjs-t-h2 filters-title" id="ihf8j1">Search &amp; Filters</h2>
         </div>
         <div class="filters-content" id="ikf6ve">
             <div class="search-field-wrapper" id="i0kqdm">
                 <label for="searchInput" class="search-label" id="i0prjt">Search dishes</label>
                 <div class="gjs-t-border search-field" id="iss5n7">
-                    <img src="lucide-search_[INPUT_icon]" alt="" class="search-icon" id="ivmlg1" />
+                    <img src="../icons/menu/search.svg" alt="" class="search-icon" id="ivmlg1" />
                     <input type="search" id="searchInput" placeholder="Type a dish name or ingredient..."
                            aria-label="Search menu" class="search-input" />
                 </div>
@@ -74,7 +74,7 @@
               <span class="gjs-t-border custom-checkbox" id="ilz114">
                 <input type="checkbox" value="vegetarian" aria-label="Vegetarian" class="dietary-input" id="i4q1zk" />
                 <span class="dietary-check-indicator" id="im7snp">
-                  <img src="lucide-check_[INPUT_icon]" alt="" class="dietary-icon" id="izw96f" />
+                  <img src="../icons/menu/check.svg" alt="" class="dietary-icon" id="izw96f" />
                 </span>
               </span>
                         <span class="dietary-text" id="itfcuc">Vegetarian</span>
@@ -83,7 +83,7 @@
               <span class="gjs-t-border custom-checkbox" id="iun0iw">
                 <input type="checkbox" value="vegan" aria-label="Vegan" class="dietary-input" id="iiuwxs" />
                 <span class="dietary-check-indicator" id="iccnkp">
-                  <img src="lucide-check_[INPUT_icon]" alt="" class="dietary-icon" id="ie1a34" />
+                  <img src="../icons/menu/check.svg" alt="" class="dietary-icon" id="ie1a34" />
                 </span>
               </span>
                         <span class="dietary-text" id="iubpmv">Vegan</span>
@@ -92,7 +92,7 @@
               <span class="gjs-t-border custom-checkbox" id="irrcr2">
                 <input type="checkbox" value="gluten-free" aria-label="Gluten-free" class="dietary-input" id="iu1svm" />
                 <span class="dietary-check-indicator" id="ilzajn">
-                  <img src="lucide-check_[INPUT_icon]" alt="" class="dietary-icon" id="i18nle" />
+                  <img src="../icons/menu/check.svg" alt="" class="dietary-icon" id="i18nle" />
                 </span>
               </span>
                         <span class="dietary-text" id="io19zk">Gluten-free</span>
@@ -101,7 +101,7 @@
               <span class="gjs-t-border custom-checkbox" id="iyrbzx">
                 <input type="checkbox" value="spicy" aria-label="Spicy" class="dietary-input" id="iwk205" />
                 <span class="dietary-check-indicator" id="iovjra">
-                  <img src="lucide-check_[INPUT_icon]" alt="" class="dietary-icon" id="id7wt8" />
+                  <img src="../icons/menu/check.svg" alt="" class="dietary-icon" id="id7wt8" />
                 </span>
               </span>
                         <span class="dietary-text" id="iwoc4n">Spicy</span>
@@ -114,7 +114,7 @@
         <div class="categories-grid" id="ifldy1">
             <a href="#category-appetizers" class="gjs-t-border category-card" id="ic1rd1">
                 <div class="category-content" id="issbep">
-                    <img src="lucide-salad_[INPUT_icon]" alt="" class="category-icon" id="ina78i" />
+                    <img src="../icons/menu/salad.svg" alt="" class="category-icon" id="ina78i" />
                     <div class="category-texts" id="ixcgo7">
                         <span class="category-name" id="itkd1b">Appetizers</span>
                         <span class="category-subtitle" id="ib8fpk">Start your meal</span>
@@ -123,7 +123,7 @@
             </a>
             <a href="#category-mains" class="gjs-t-border category-card" id="iuqba4">
                 <div class="category-content" id="iz1meq">
-                    <img src="lucide-beef_[INPUT_icon]" alt="" class="category-icon" id="iz3m2m" />
+                    <img src="../icons/menu/beef.svg" alt="" class="category-icon" id="iz3m2m" />
                     <div class="category-texts" id="i4s1yz">
                         <span class="category-name" id="i4587j">Mains</span>
                         <span class="category-subtitle" id="il9yyd">Hearty favorites</span>
@@ -132,7 +132,7 @@
             </a>
             <a href="#category-drinks" class="gjs-t-border category-card" id="ig6a0h">
                 <div class="category-content" id="inmbfk">
-                    <img src="lucide-cup-soda_[INPUT_icon]" alt="" class="category-icon" id="iu4zs5" />
+                    <img src="../icons/menu/cup-soda.svg" alt="" class="category-icon" id="iu4zs5" />
                     <div class="category-texts" id="iqmxmo">
                         <span class="category-name" id="is54ij">Drinks</span>
                         <span class="category-subtitle" id="iqjq14">Refreshing sips</span>
@@ -141,7 +141,7 @@
             </a>
             <a href="#category-desserts" class="gjs-t-border category-card" id="iu3iff">
                 <div class="category-content" id="iypkeq">
-                    <img src="lucide-ice-cream_[INPUT_icon]" alt="" class="category-icon" id="inoxni" />
+                    <img src="../icons/menu/dessert.svg" alt="" class="category-icon" id="inoxni" />
                     <div class="category-texts" id="i03h03">
                         <span class="category-name" id="ijtqnd">Desserts</span>
                         <span class="category-subtitle" id="idirlg">Sweet endings</span>
@@ -154,7 +154,7 @@
         <div class="menu-list-column" id="ikpm76">
             <div id="category-appetizers" class="category-section">
                 <div class="section-header" id="i7b12v">
-                    <img src="lucide-salad_[INPUT_icon]" alt="" class="section-icon" id="i1g8ij" />
+                    <img src="../icons/menu/salad.svg" alt="" class="section-icon" id="i1g8ij" />
                     <h3 class="section-title" id="i41nyg">Appetizers</h3>
                 </div>
                 <div class="items-grid" id="ialtwc">
@@ -165,7 +165,7 @@
             </div>
             <div id="category-mains" class="category-section">
                 <div class="section-header" id="i8ux57">
-                    <img src="lucide-beef_[INPUT_icon]" alt="" class="section-icon" id="ikepdp" />
+                    <img src="../icons/menu/beef.svg" alt="" class="section-icon" id="ikepdp" />
                     <h3 class="section-title" id="ie5zce">Mains</h3>
                 </div>
                 <div class="items-grid" id="i04jwt">
@@ -176,7 +176,7 @@
             </div>
             <div id="category-drinks" class="category-section">
                 <div class="section-header" id="ibigiz">
-                    <img src="lucide-cup-soda_[INPUT_icon]" alt="" class="section-icon" id="if5brj" />
+                    <img src="../icons/menu/cup-soda.svg" alt="" class="section-icon" id="if5brj" />
                     <h3 class="section-title" id="i1ce7c">Drinks</h3>
                 </div>
                 <div class="items-grid" id="i10vs7">
@@ -187,7 +187,7 @@
             </div>
             <div id="category-desserts" class="category-section">
                 <div class="section-header" id="iz81bh">
-                    <img src="lucide-ice-cream_[INPUT_icon]" alt="" class="section-icon" id="iscsv7" />
+                    <img src="../icons/menu/dessert.svg" alt="" class="section-icon" id="iscsv7" />
                     <h3 class="section-title" id="id55wv">Desserts</h3>
                 </div>
                 <div class="items-grid" id="i3pun8">
@@ -201,7 +201,7 @@
             <div class="gjs-t-border cart-panel" id="i151kk">
                 <div class="cart-header" id="icafz3">
                     <div class="cart-title-group" id="iz9l8v">
-                        <img src="lucide-shopping-cart_[INPUT_icon]" alt="" class="cart-icon" id="im98ux" />
+                        <img src="../icons/menu/shopping-cart.svg" alt="" class="cart-icon" id="im98ux" />
                         <h3 class="cart-title" id="ifk5jv">Your Cart</h3>
                     </div>
                     <button type="button" id="clearCartBtn" class="clear-cart-button">Clear</button>
@@ -224,8 +224,8 @@
                     </div>
                 </div>
                 <div class="cart-actions" id="ifvmzq">
-                    <a href="cart-checkout.jsp" class="gjs-t-button checkout-button" id="iphd53">Go to Checkout</a>
-                    <a href="menu.jsp" class="gjs-t-link view-menu-link" id="icdqxl">Continue browsing</a>
+                    <a href="../html/cart-checkout.html" class="gjs-t-button checkout-button" id="iphd53">Go to Checkout</a>
+                    <a href="./menu.html" class="gjs-t-link view-menu-link" id="icdqxl">Continue browsing</a>
                 </div>
             </div>
         </aside>
@@ -236,11 +236,11 @@
     <div class="gjs-t-border customization-modal" id="i328e6">
         <div class="modal-header" id="iirxru">
             <div class="modal-title-group" id="indouj">
-                <img src="lucide-settings-2_[INPUT_icon]" alt="" class="modal-icon" id="iz67gf" />
+                <img src="../icons/menu/settings-2.svg" alt="" class="modal-icon" id="iz67gf" />
                 <h4 id="modalItemName" class="modal-title">Customize Item</h4>
             </div>
             <button type="button" id="closeModalBtn" aria-label="Close customization" class="modal-close">
-                <img src="lucide-x_[INPUT_icon]" alt="" class="close-icon" id="izhv3e" />
+                <img src="../icons/menu/x.svg" alt="" class="close-icon" id="izhv3e" />
             </button>
         </div>
         <div class="modal-body" id="in0wqv">
