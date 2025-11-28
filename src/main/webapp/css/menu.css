@@ -592,7 +592,7 @@ video {
 
 .hero-title {
     margin-bottom: 0.75rem;
-    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-weight: 600;
 }
 
 body.gjs-t-body {
@@ -887,6 +887,22 @@ body.gjs-t-body {
 
 #iakbm7 {
     grid-area: 1 / 9 / 2 / 13;
+}
+
+.gjs-t-h1 {
+    color: #2A1F1F;
+    font-size: 44px;
+    line-height: 1.2;
+}
+
+.gjs-t-h2 {
+    color: #2A1F1F;
+    font-size: 28px;
+    line-height: 1.3;
+}
+
+#unified-title {
+    font-family: 'Playfair Display', serif;
 }
 
 /* disunified from this point forward */

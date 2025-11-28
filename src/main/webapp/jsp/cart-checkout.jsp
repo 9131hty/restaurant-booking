@@ -7,11 +7,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="robots" content="homepage,follow">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-    <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap"
-            rel="stylesheet" />
     <link rel="stylesheet" href="../css/cart-checkout.css">
     <script src="../js/header.js" defer></script>
     <script src="../js/footer.js" defer></script>
@@ -24,7 +19,7 @@
     <section id="i74tmyi" class="page-header">
         <div class="header-flex" id="ip7ltsc">
             <div class="header-left" id="ib7nxok">
-                <h1 class="gjs-t-h1 hero-title" id="unified-title">Cart &amp; Checkout</h1>
+                <h1 class="gjs-t-h1 page-title" id="ij3cc1f">Cart &amp; Checkout</h1>
                 <p class="page-subtitle" id="ih3e7lk">Review your order, choose pickup or delivery, and securely pay.</p>
             </div>
             <div class="security-badge" id="ikfqjaj">
