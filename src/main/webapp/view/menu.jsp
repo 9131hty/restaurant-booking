@@ -7,10 +7,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index,follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
     <link
-            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap"
             rel="stylesheet" />
-    <link rel="stylesheet" href="../css/menu.css">
     <script src="../js/header.js" defer></script>
     <script src="../js/footer.js" defer></script>
     <script src="../js/menu.js" defer></script>
@@ -21,7 +22,7 @@
 <main class="page-content" id="i41fjy">
     <section class="hero-section" id="ivwr1t">
         <div class="hero-text" id="i8jcom">
-            <h1 class="gjs-t-h1 hero-title" id="i84ani">Our Menu</h1>
+            <h1 class="gjs-t-h1 hero-title" id="unified-title">Our Menu</h1>
             <p class="hero-subtitle" id="iscmxb">Explore authentic flavors crafted with seasonal ingredients. Browse by
                 category, filter by dietary needs, and customize each dish to your taste.</p>
             <div class="hero-quick-links" id="iy1j3a">
