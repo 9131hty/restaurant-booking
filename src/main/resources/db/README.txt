@@ -1,0 +1,1 @@
+sqlite3 db/app.db < src/main/resources/db/schema.sql

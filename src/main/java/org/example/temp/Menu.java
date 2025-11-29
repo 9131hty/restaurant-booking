@@ -1,4 +1,4 @@
-package com.restaurant.bean.temp;
+package org.example.temp;
 
 import java.util.List;
 
