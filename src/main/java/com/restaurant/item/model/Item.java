@@ -1,18 +1,12 @@
 package com.restaurant.item.model;
 
-import com.restaurant.common.model.Tag;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.restaurant.common.model.Tag;
 import com.restaurant.item.enumeration.ItemType;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Item {
     private int id;
     private String sku; // item code
