@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class DBConnection {
 
     /** JDBC URL pointing to the SQLite database file */
-    private static final String URL = "jdbc:sqlite:db/restaurant.db";
+    private static final String URL = "jdbc:sqlite:db/restaurant.sqlite3";
 
     /** Singleton Connection instance */
     private static Connection connection = null;
@@ -23,10 +23,11 @@ public class DBConnection {
      * @return Connection object
      * @throws DatabaseException if a database access error occurs
      */
-    public static Connection getConnection() throws DatabaseException {
+    public synchronized Connection getConnection() throws DatabaseException {
         try {
             if (connection == null || connection.isClosed()) {
                 connection = DriverManager.getConnection(URL);
+                connection.createStatement().execute("PRAGMA foreign_keys = ON");
                 System.out.println("Connected to SQLite database.");
             }
             return connection;
@@ -40,7 +41,7 @@ public class DBConnection {
      *
      * @throws DatabaseException if closing the connection fails
      */
-    public static void closeConnection() throws DatabaseException {
+    public synchronized static void closeConnection() throws DatabaseException {
         try {
             if (connection != null && !connection.isClosed()) {
                 connection.close();
@@ -49,5 +50,10 @@ public class DBConnection {
         } catch (SQLException e) {
             throw new DatabaseException("Failed to close the database connection.", e);
         }
+    }
+
+    public static void main(String[] args) throws DatabaseException {
+        DBConnection db = new DBConnection();
+        db.getConnection();
     }
 }

@@ -1,1 +1,1 @@
-sqlite3 db/app.db < src/main/resources/db/schema.sql
+sqlite3 db/restaurant.sqlite3 < src/main/resources/db/schema.sql
