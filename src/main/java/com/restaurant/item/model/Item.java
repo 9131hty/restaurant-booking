@@ -1,12 +1,15 @@
 package com.restaurant.item.model;
 
-
 import java.time.LocalDateTime;
 import java.util.List;
 
 import com.restaurant.common.model.Tag;
-import com.restaurant.item.enumeration.ItemType;
+import com.restaurant.item.enumeration.criteria.ItemType;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@NoArgsConstructor
 public class Item {
     /** Unique identifier for the item. */
     private int id;
