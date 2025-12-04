@@ -1,4 +1,4 @@
-package com.restaurant.bean.temp;
+package org.example.temp;
 
 public class Admin extends Account {
 }
