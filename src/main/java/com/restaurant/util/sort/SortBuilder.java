@@ -1,55 +1,43 @@
 package com.restaurant.util.sort;
 
-import com.restaurant.util.criterion.Criterion;
+import com.restaurant.util.comparator.ComparatorBuilder;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Function;
 
 public class SortBuilder<T> {
-    private final List<Criterion<T, ?>> criteria = new ArrayList<>();
-    private final List<T> targetList;
 
-    public SortBuilder(List<T> targetList) {
-        this.targetList = targetList;
+    private final List<T> list;
+    private final ComparatorBuilder<T> comparatorBuilder = new ComparatorBuilder<>();
+
+    public SortBuilder(List<T> list) {
+        this.list = list;
     }
 
-    public <R extends Comparable<R>> SortBuilder<T> by(Function<T, R> field) {
-        Criterion<T, R> criterion = new Criterion<>(field);
-        criteria.add(criterion);
-        return this;
+    public <R extends Comparable<? super R>> ComparatorBuilder.ComparatorOrderStep<T, R> by(Function<T, R> field) {
+        return comparatorBuilder.by(field);
     }
 
-    public SortBuilder<T> asc() {
-        if (!criteria.isEmpty()) {
-            criteria.get(criteria.size() - 1).setAscending(true);
-        }
-        return this;
+    public <R> ComparatorBuilder.ComparatorCustomStep<T, R> by(
+            Function<T, R> field,
+            Comparator<R> comparator
+    ) {
+        return comparatorBuilder.by(field, comparator);
     }
 
-    public SortBuilder<T> desc() {
-        if (!criteria.isEmpty()) {
-            criteria.get(criteria.size() - 1).setAscending(false);
-        }
-        return this;
+    public <R extends Comparable<? super R>> ComparatorBuilder.ComparatorOrderStep<T, R> then(Function<T, R> field) {
+        return comparatorBuilder.then(field);
     }
 
-    public <R extends Comparable<R>> SortBuilder<T> then(Function<T, R> field) {
-        return by(field);
+    public <R> ComparatorBuilder.ComparatorCustomStep<T, R> then(
+            Function<T, R> field,
+            Comparator<R> comparator
+    ) {
+        return comparatorBuilder.then(field, comparator);
     }
 
-    @SuppressWarnings({"unchecked", "rawtypes"})
     public void build() {
-        Comparator<T> comparator = null;
-        for (Criterion<T, ?> criterion : criteria) {
-            Comparator<T> c = Comparator.comparing((Function) criterion.getField());
-            if (!criterion.isAscending()) c = c.reversed();
-            comparator = (comparator == null) ? c : comparator.thenComparing(c);
-        }
-        if (comparator != null) {
-            targetList.sort(comparator);
-        }
+        list.sort(comparatorBuilder.build());
     }
 }
-
