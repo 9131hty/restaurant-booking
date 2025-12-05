@@ -3,6 +3,7 @@ package com.restaurant.item.model;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.restaurant.common.enumeration.Currency;
 import com.restaurant.common.model.Tag;
 import com.restaurant.item.enumeration.criteria.ItemType;
 import lombok.Data;
@@ -75,7 +76,7 @@ public class Item {
     /** Whether the item is currently on sale. */
     private boolean onSale;
     /** Currency code (e.g., USD, EUR). */
-    private String currency;
+    private Currency currency;
 
     /** Available size options for the item (e.g., S, M, L). */
     private List<ItemSize> sizes;
