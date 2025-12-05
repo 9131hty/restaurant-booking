@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.restaurant.common.model.Tag;
 import com.restaurant.item.enumeration.criteria.ItemType;
-import com.restaurant.util.sort.SortBuilder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
