@@ -1,9 +1,9 @@
 package org.example.test;
 
-import com.restaurant.util.comparator.ComparatorBuilder;
-
 import java.util.Comparator;
 import java.util.List;
+
+import com.restaurant.util.comparator.ComparatorBuilder;
 
 public class DemoComparator {
     public static void main(String[] args) {
