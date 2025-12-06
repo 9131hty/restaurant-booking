@@ -1,8 +1,8 @@
 package org.example.test;
 
-import com.restaurant.util.filter.Filter;
-
 import java.util.List;
+
+import com.restaurant.util.filter.Filter;
 
 public class DemoFilter {
     public static void main(String[] args) {

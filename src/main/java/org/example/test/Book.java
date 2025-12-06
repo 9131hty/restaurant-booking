@@ -1,8 +1,10 @@
 package org.example.test;
 
 import lombok.Getter;
+import lombok.ToString;
 
 @Getter
+@ToString
 public class Book {
     private String isbn;
     private String title;
