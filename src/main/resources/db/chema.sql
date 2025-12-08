@@ -12,7 +12,7 @@ CREATE TABLE items (
     category TEXT,
     subCategory TEXT,
 
-    type TEXT, -- Enum stored as TEXT
+    itemType TEXT,
 
     vegetarian INTEGER DEFAULT 0,
     vegan INTEGER DEFAULT 0,

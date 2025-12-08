@@ -3,9 +3,10 @@ package com.restaurant.item.model;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.restaurant.common.enumeration.Cuisine;
 import com.restaurant.common.enumeration.Currency;
 import com.restaurant.common.model.Tag;
-import com.restaurant.item.enumeration.criteria.ItemType;
+import com.restaurant.item.enumeration.ItemType;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -22,7 +23,7 @@ public class Item {
     /** Localized name of the item. */
     private String localName;
     /** Cuisine type. */
-    private String cuisine;
+    private Cuisine cuisine;
     /** Full description of the item. */
     private String description;
     /** Short description for quick display. */
@@ -33,7 +34,7 @@ public class Item {
     private String subCategory;
 
     /** Type of the item as defined in ItemType enum. */
-    private ItemType type;
+    private ItemType itemType;
     /** Tags associated with the item (e.g., Spicy, Vegan). */
     private List<Tag> tags;
     /** Whether the item is vegetarian. */
