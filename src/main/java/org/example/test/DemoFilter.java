@@ -15,9 +15,8 @@ public class DemoFilter {
         );
 
         List<Book> result = new Filter<>(books)
-                        .where(Book::getAuthor).contains("Bloch")
-                        .or(Book::getYear).gt(2010)
-                        .apply();
+                .where(Book::getYear).eq(2008)
+                        .or(Book::getAuthor).contains("Wal").apply();
 
         result.forEach(System.out::println);
     }
