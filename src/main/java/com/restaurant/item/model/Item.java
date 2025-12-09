@@ -10,6 +10,15 @@ import com.restaurant.item.enumeration.ItemType;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Represents a menu item in the restaurant system. This class includes
+ * complete information about the item's identity, classification, pricing,
+ * nutrition details, availability settings, and metadata related to sales
+ * and customer interactions.
+ *
+ * <p>It is used across ordering, menu display, inventory management, and
+ * recommendation modules.</p>
+ */
 @Data
 @NoArgsConstructor
 public class Item {

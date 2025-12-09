@@ -1,23 +1,49 @@
 package com.restaurant.item.model;
 
 import com.restaurant.common.enumeration.MeasurementUnit;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * Represents a size option for an item, applicable to both food and beverages.
+ * Represents a specific size variant of an item.
+ * Each size can have its own pricing, volume, and measurement unit.
+ *
+ * <p>This class is commonly used for menu items that offer multiple size
+ * options such as beverages (Small/Medium/Large), packaged foods with
+ * different weight options, or dishes available in various portion sizes.</p>
  */
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class ItemSize {
-    /** Display name of the size (e.g., Small, Medium, Large). */
+
+    /**
+     * Unique identifier for the size option.
+     * This ID is used to manage the size record across database operations
+     * and ensures consistent reference throughout the system.
+     */
+    private int id;
+
+    /**
+     * Display name of the size (e.g., "Small", "Medium", "Large").
+     * This value is typically shown to customers in menus and during ordering.
+     */
     private String name;
-    /** Price associated with this size. */
+
+    /**
+     * Price associated with this particular size.
+     * The price may be higher or lower depending on the size value.
+     */
     private double price;
-    /** Numeric value representing the size amount (e.g., 350). */
+
+    /**
+     * Numerical representation of the size, such as volume or weight.
+     * Examples: 350 (ml), 500 (g), 1 (portion).
+     */
     private double volume;
-    /** Unit of measurement for the volume (e.g., ml, g, portion). */
+
+    /**
+     * Unit of measurement used for the size value, such as milliliters (ml),
+     * grams (g), or portion counts. This helps define what the volume represents.
+     */
     private MeasurementUnit measurementUnit;
 }

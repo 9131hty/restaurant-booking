@@ -13,13 +13,16 @@ CREATE TABLE items (
     subCategory TEXT,
 
     itemType TEXT,
-
+    --<!> Tag relational mapping
     vegetarian INTEGER DEFAULT 0,
     vegan INTEGER DEFAULT 0,
     glutenFree INTEGER DEFAULT 0,
     spicy INTEGER DEFAULT 0,
     halal INTEGER DEFAULT 0,
     containsAlcohol INTEGER DEFAULT 0,
+
+    --<!> Ingredient relational mapping
+    --<?> Allergen string list
 
     calories INTEGER,
     protein REAL,
@@ -34,6 +37,10 @@ CREATE TABLE items (
     onSale INTEGER DEFAULT 0,
     currency TEXT,
 
+    --<?> ItemSize relational mapping
+    --<?> Topping relational mapping
+    --<?> Modifier relational mapping
+
     available INTEGER DEFAULT 1,
     outOfStock INTEGER DEFAULT 0,
     seasonal INTEGER DEFAULT 0,
@@ -42,6 +49,7 @@ CREATE TABLE items (
     requireCooking INTEGER DEFAULT 0,
 
     image TEXT,
+    --<?> Gallery relational mapping
 
     rating REAL,
     ratingCount INTEGER,
@@ -53,6 +61,8 @@ CREATE TABLE items (
     isTopRated INTEGER DEFAULT 0,
 
     menuId INTEGER,
+    --<!> comboIds: List of id in INT
+    --<!> relatedItemIds: List of id in INT
     brand TEXT,
 
     allowDelivery INTEGER DEFAULT 0,
