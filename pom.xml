@@ -125,6 +125,14 @@
             <version>7.0.2</version>
         </dependency>
 
+        <!-- Flyway -->
+        <!-- https://mvnrepository.com/artifact/org.flywaydb/flyway-core -->
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>11.19.0</version>
+        </dependency>
+
 <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper &ndash;&gt;-->
 <!--        <dependency>-->
 <!--            <groupId>org.apache.tomcat.embed</groupId>-->
