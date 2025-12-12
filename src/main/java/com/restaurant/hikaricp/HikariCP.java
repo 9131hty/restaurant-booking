@@ -1,7 +1,8 @@
-package com.restaurant.db;
+package com.restaurant.hikaricp;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import lombok.Getter;
 
 import java.io.File;
 import java.io.InputStream;
@@ -11,20 +12,21 @@ import java.util.Properties;
 
 /**
  * Provides a connection pool for SQLite using HikariCP.
- * Configuration values are loaded from an external dbcp.properties file.
+ * Configuration values are loaded from an external hikaricp.properties file.
  */
-public class DBCP {
+public class HikariCP {
 
+    @Getter
     private static HikariDataSource dataSource;
 
     static {
         try {
             Properties props = new Properties();
-            InputStream in = DBCP.class.getClassLoader()
-                    .getResourceAsStream("db/dbcp.properties");
+            InputStream in = HikariCP.class.getClassLoader()
+                    .getResourceAsStream("config/hikaricp.properties");
 
             if (in == null) {
-                throw new RuntimeException("dbcp.properties not found in resources/db/");
+                throw new RuntimeException("hikaricp.properties not found in resources/config/");
             }
 
             props.load(in);

@@ -13,7 +13,7 @@ CREATE TABLE items (
     subCategory TEXT,
 
     itemType TEXT,
-    --<!> Tag relational mapping
+    --<!> (tag) -> item_tag.item_id [ref: < "item"."id"]
     vegetarian INTEGER DEFAULT 0,
     vegan INTEGER DEFAULT 0,
     glutenFree INTEGER DEFAULT 0,
@@ -21,7 +21,7 @@ CREATE TABLE items (
     halal INTEGER DEFAULT 0,
     containsAlcohol INTEGER DEFAULT 0,
 
-    --<!> Ingredient relational mapping
+    --<!> (ingredients) ->  item_ingredient.item_id
     --<?> Allergen string list
 
     calories INTEGER,
@@ -79,4 +79,28 @@ CREATE TABLE items (
     createdBy TEXT,
     updatedBy TEXT,
     deletedBy TEXT
+);
+
+CREATE TABLE Ingredient (
+    id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL,
+    measurementUnit TEXT NOT NULL,
+    costPerUnit REAL NOT NULL,
+    stockQuantity INTEGER NOT NULL DEFAULT 0,
+    minStockQuantity INTEGER NOT NULL DEFAULT 0,
+    category TEXT,
+    allergen INTEGER NOT NULL DEFAULT 0,
+    description TEXT,
+    status TEXT NOT NULL
+);
+
+CREATE TABLE itemIngredient (
+    itemId INTEGER NOT NULL,
+    ingredientId INTEGER NOT NULL,
+    quantity REAL NOT NULL,
+    unit TEXT,
+    costSnapshot REAL,
+    PRIMARY KEY (itemId, ingredientId),
+    FOREIGN KEY (itemId) REFERENCES item(id),
+    FOREIGN KEY (ingredientId) REFERENCES ingredient(id)
 );
