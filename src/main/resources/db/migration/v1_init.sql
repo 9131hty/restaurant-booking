@@ -21,7 +21,7 @@ CREATE TABLE items (
     halal INTEGER DEFAULT 0,
     containsAlcohol INTEGER DEFAULT 0,
 
-    --<!> Ingredient relational mapping
+    --<!> (ingredients) ->  item_ingredient.item_id
     --<?> Allergen string list
 
     calories INTEGER,
