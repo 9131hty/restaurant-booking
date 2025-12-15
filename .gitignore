@@ -57,4 +57,4 @@ structure.txt
 /src/main/java/com/restaurant/common/log/*
 /src/main/java/com/restaurant/common/model/route/*
 /src/main/java/com/restaurant/common/filter/*
-!/src/main/java/com/restaurant/common/config/AppContextListener.java
+!/src/main/java/com/restaurant/common/config/
