@@ -1,4 +1,4 @@
-package com.restaurant.hikaricp;
+package com.restaurant.common.hikaricp;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;

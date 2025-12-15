@@ -1,7 +1,6 @@
--- SQLite database export
-PRAGMA foreign_keys = ON;
+--PRAGMA foreign_keys = ON;
 
-BEGIN TRANSACTION;
+-- flyway:executeInTransaction=false
 CREATE TABLE IF NOT EXISTS "item" (
     "id" INTEGER PRIMARY KEY NOT NULL,
     "sku" TEXT,
@@ -101,6 +100,3 @@ CREATE TABLE IF NOT EXISTS "item_ingredient" (
     FOREIGN KEY("ingredient_id") REFERENCES "ingredient"("id"),
     FOREIGN KEY("item_id") REFERENCES "item"("id")
 );
-
-
-COMMIT;

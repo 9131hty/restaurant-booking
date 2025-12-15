@@ -1,11 +1,15 @@
-package com.restaurant.config;
+package com.restaurant.common.config;
 
-import com.restaurant.hikaricp.HikariCP;
+import com.restaurant.common.hikaricp.HikariCP;
 import com.zaxxer.hikari.HikariDataSource;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.annotation.WebListener;
 import org.flywaydb.core.Flyway;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.File;
 
 /**
  * Controls application startup and shutdown behavior.
@@ -38,6 +42,7 @@ public class AppContextListener implements ServletContextListener {
                     .load();
 
             flyway.migrate();
+
         } catch (Exception e) {
             System.err.println("Application startup error:");
             e.printStackTrace();
