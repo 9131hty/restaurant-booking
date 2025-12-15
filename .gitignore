@@ -51,3 +51,9 @@ build
 
 # other
 structure.txt
+/src/main/resources/logback.xml
+/src/main/webapp/WEB-INF/config/
+/src/main/java/com/restaurant/common/log/
+/src/main/java/com/restaurant/common/model/route/
+/src/main/java/com/restaurant/common/filter/RequestLoggingFilter.java
+/src/main/java/com/restaurant/common/config/RouteConfigLoader.java
