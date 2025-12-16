@@ -1,0 +1,13 @@
+.header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-bottom-width: 1px;
+    border-color: rgba(228, 216, 200, 0.8);
+    background-color: rgba(255, 253, 248, 0.85);
+    backdrop-filter: blur(8px);
+    transition: top 0.3s;
+}
