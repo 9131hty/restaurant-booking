@@ -1,0 +1,49 @@
+.sparkle-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 70%);
+    filter: saturate(1.15) drop-shadow(0 0 6px rgba(255, 255, 255, 0.55));
+    opacity: 0;
+    pointer-events: none;
+    animation: sparkTwinkle 1.9s ease-in-out infinite;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.45), 0 0 14px rgba(193, 154, 107, 0.28);
+    transform: translate(-50%, -50%) scale(0.9);
+    will-change: transform, opacity, filter;
+    transition: opacity 200ms ease;
+    z-index: 1;
+}
+
+.dish-card:hover .sparkle-dot {
+    opacity: 0.85;
+    animation: sparkTwinkleSoft var(--twinkle, 1400ms) ease-in-out infinite,
+    sparkDrift var(--drift, 7s) linear infinite;
+}
+
+.dish-card:hover .sparkle-dot.s-low {
+    animation-duration: 1600ms;
+}
+
+.dish-card:hover .sparkle-dot.s-mid {
+    animation-duration: 1400ms;
+}
+
+.dish-card:hover .sparkle-dot.s-high {
+    animation-duration: 1200ms;
+}
+
+.sparkle-dot.s-low {
+    --twinkle: 1600ms;
+    --drift: 8s;
+}
+
+.sparkle-dot.s-mid {
+    --twinkle: 1400ms;
+    --drift: 7s;
+}
+
+.sparkle-dot.s-high {
+    --twinkle: 1200ms;
+    --drift: 6s;
+}

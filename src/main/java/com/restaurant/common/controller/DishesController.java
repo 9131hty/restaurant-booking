@@ -6,13 +6,13 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 
-@WebServlet(name = "HomeController", value = "/home")
-public class HomeController extends HttpServlet {
+@WebServlet(name = "DishesController", value = "/dishes")
+public class DishesController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/views/home/home.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/menu/dishes.jsp").forward(request, response);
     }
 
     @Override
