@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<c:set var="gcv" value="${pageContext.request.contextPath}/assets/" scope="application" />
 <!DOCTYPE html>
 <html lang="en">
 
