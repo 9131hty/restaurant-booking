@@ -16,37 +16,37 @@
 <body class="cjiayo-t-body body">
 <jsp:include page="/WEB-INF/views/layout/header.jsp" />
 <div class="header-spacer"></div>
-<main id="i99ahbp">
-    <section id="ia1q4x8" class="hero-section">
-        <div id="i8642dy" class="hero-background">
-            <div id="i17xid" class="decorative-blob"></div>
-            <div id="i7jdxt" class="decorative-blob"></div>
-            <div aria-hidden="true" class="shine-layer"></div>
-        </div>
-        <div id="ibea6pv" class="hero-container">
-            <div class="header-row">
-                <div class="hero-text">
-                    <p class="overline">Fine casual dining</p>
-                    <h1 id="inaea3x" class="cjiayo-t-h1 hero-title">Our Menu</h1>
-                    <p id="i4q7qep" class="hero-subtitle">Explore our chef-curated selection of seasonal plates, crafted with
-                        local ingredients and global inspiration. No ordering here — just savor the details.</p>
-                    <div id="i14si51" class="breadcrumbs"><a href="home"
-                                                             class="cjiayo-t-link breadcrumb-link">Home</a><span class="breadcrumb-divider">/</span><span
-                            class="breadcrumb-current">Menu</span></div>
-                </div>
-                <div class="hero-badge">
-                    <div class="cjiayo-t-border badge-card"><img
-                            src="${gcv}icons/dishes/sparkles.svg" alt="Sparkles Icon"
-                            class="icon-badge" />
-                        <div>
-                            <p class="badge-title">Seasonal Highlights</p>
-                            <p class="badge-subtitle">New dishes added this month</p>
-                        </div>
+<section id="ia1q4x8" class="hero-section">
+    <div id="i8642dy" class="hero-background">
+        <div id="i17xid" class="decorative-blob"></div>
+        <div id="i7jdxt" class="decorative-blob"></div>
+        <div aria-hidden="true" class="shine-layer"></div>
+    </div>
+    <div id="ibea6pv" class="hero-container">
+        <div class="header-row">
+            <div class="hero-text">
+                <p class="overline">Fine casual dining</p>
+                <h1 id="inaea3x" class="cjiayo-t-h1 hero-title">Our Menu</h1>
+                <p id="i4q7qep" class="hero-subtitle">Explore our chef-curated selection of seasonal plates, crafted with
+                    local ingredients and global inspiration. No ordering here — just savor the details.</p>
+                <div id="i14si51" class="breadcrumbs"><a href="home"
+                                                         class="cjiayo-t-link breadcrumb-link">Home</a><span class="breadcrumb-divider">/</span><span
+                        class="breadcrumb-current">Menu</span></div>
+            </div>
+            <div class="hero-badge">
+                <div class="cjiayo-t-border badge-card"><img
+                        src="${gcv}icons/dishes/sparkles.svg" alt="Sparkles Icon"
+                        class="icon-badge" />
+                    <div>
+                        <p class="badge-title">Seasonal Highlights</p>
+                        <p class="badge-subtitle">New dishes added this month</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+<main id="i99ahbp">
     <section class="menu-section">
         <div class="cjiayo-t-border filter-bar">
             <div class="filter-chips"><button type="button" class="filter-chip">All</button><button type="button"

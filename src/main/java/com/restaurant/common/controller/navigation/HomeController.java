@@ -1,4 +1,4 @@
-package com.restaurant.common.controller;
+package com.restaurant.common.controller.navigation;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;

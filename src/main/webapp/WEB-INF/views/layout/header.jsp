@@ -15,7 +15,7 @@
                 Reservation</a>
             <a href="contact-about" class="cjiayo-t-link navbar-link" id="ikfa3">
                 About</a>
-            <a href="feedback-reviews" class="cjiayo-t-link navbar-link" id="ib5j3">
+            <a href="reviews" class="cjiayo-t-link navbar-link" id="ib5j3">
                 Reviews</a>
             <a href="sign-in" class="cjiayo-t-button navbar-cta" id="i9x65">
                 <img src="${gcv}icons/common/log-in.svg" alt="" class="hero-icon"/>
