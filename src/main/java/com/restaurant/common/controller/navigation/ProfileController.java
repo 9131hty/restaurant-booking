@@ -1,4 +1,4 @@
-package com.restaurant.common.controller;
+package com.restaurant.common.controller.navigation;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -6,13 +6,13 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 
-@WebServlet(name = "CheckoutControllert", value = "/checkout")
-public class CheckoutController extends HttpServlet {
+@WebServlet(name = "ProfileController", value = "/profile")
+public class ProfileController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/views/menu/checkout.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/user/profile.jsp").forward(request, response);
     }
 
     @Override
