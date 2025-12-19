@@ -46,12 +46,12 @@ public class Menu {
 
     /** List of item IDs included in the menu, referencing the Item domain model. */
     private List<Integer> itemIds;
-    /** IDs of items recommended for highlighting or upselling. */
-    private List<Integer> recommendedItemIds;
-    /** IDs of featured items intended to appear prominently in marketing or presentation. */
-    private List<Integer> featuredItemIds;
-    /** IDs of items specially curated or prepared by the head chef. */
-    private List<Integer> chefSpecialItemIds;
+//    /** IDs of items recommended for highlighting or upselling. */
+//    private List<Integer> recommendedItemIds;
+//    /** IDs of featured items intended to appear prominently in marketing or presentation. */
+//    private List<Integer> featuredItemIds;
+//    /** IDs of items specially curated or prepared by the head chef. */
+//    private List<Integer> chefSpecialItemIds;
 
     /** Indicates whether the menu is a limited-edition offering. */
     private boolean isLimitedEdition;
@@ -64,32 +64,32 @@ public class Menu {
     private String chefInCharge;
     /** A conceptual explanation of the culinary direction, philosophy, or experience behind the menu. */
     private String culinaryConcept;
-    /** Labels indicating dietary suitability, such as vegan, gluten-free, or halal. */
-    private List<String> dietaryLabels;
-    /** Allergen warnings relevant to items within the menu, such as nuts, dairy, or shellfish. */
-    private List<String> allergenWarnings;
-    /** Calorie range describing the approximate nutritional scope of the menu. */
-    private Range calorieRange;
+//    /** Labels indicating dietary suitability, such as vegan, gluten-free, or halal. */
+//    private List<String> dietaryLabels;
+//    /** Allergen warnings relevant to items within the menu, such as nuts, dairy, or shellfish. */
+//    private List<String> allergenWarnings;
+//    /** Calorie range describing the approximate nutritional scope of the menu. */
+//    private Range calorieRange;
 
     /** Main image used for featuring or representing the menu visually. */
     private String featuredImage;
-    /** List of image URLs or paths forming a visual gallery for the menu. */
-    private List<String> gallery;
+//    /** List of image URLs or paths forming a visual gallery for the menu. */
+//    private List<String> gallery;
     /** Personalized message or culinary introduction written by the chef. */
     private String chefMessage;
 
-    /** Indicates whether the menu is specially highlighted for seasonal promotions. */
-    private boolean highlightedForSeason;
-    /** Tags related to promotions, events, or campaigns associated with the menu. */
-    private List<Tag> promotionTags;
+//    /** Indicates whether the menu is specially highlighted for seasonal promotions. */
+//    private boolean highlightedForSeason;
+//    /** Tags related to promotions, events, or campaigns associated with the menu. */
+//    private List<Tag> promotionTags;
 
-    /** Branches or restaurant locations where the menu is available. */
-    private List<String> branchAvailability;
+//    /** Branches or restaurant locations where the menu is available. */
+//    private List<String> branchAvailability;
 
     /** Current status of the menu, such as active, deprecated, or hidden. */
     private Status status;
-    /** Types of tables or dining areas where the menu is applicable, such as VIP rooms or outdoor terraces. */
-    private List<TableType> tableTypeAvailability;
+//    /** Types of tables or dining areas where the menu is applicable, such as VIP rooms or outdoor terraces. */
+//    private List<TableType> tableTypeAvailability;
     /** Expected preparation lead time (in minutes) for items within the menu. */
     private int preparationLeadTime;
 
@@ -100,10 +100,10 @@ public class Menu {
     /** Version identifier used for version control across menu iterations. */
     private String version;
 
-    /** Roles that are allowed to view the menu within administrative systems. */
-    private List<Role> visibleToRoles;
-    /** Roles that are authorized to edit the menu's content or metadata. */
-    private List<Role> editableByRoles;
+//    /** Roles that are allowed to view the menu within administrative systems. */
+//    private List<Role> visibleToRoles;
+//    /** Roles that are authorized to edit the menu's content or metadata. */
+//    private List<Role> editableByRoles;
     /** Workflow status representing the menu's lifecycle, such as draft, pending approval, or published. */
     private WorkflowStatus workflowStatus;
 
