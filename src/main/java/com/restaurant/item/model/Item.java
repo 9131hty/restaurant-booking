@@ -45,7 +45,7 @@ public class Item {
     /** Type of the item as defined in ItemType enum. */
     private ItemType itemType;
     /** Tags associated with the item (e.g., Spicy, Vegan). */
-    private List<Tag> tags;
+    private List<Integer> tagIds;
     /** Whether the item is vegetarian. */
     private boolean vegetarian;
     /** Whether the item is vegan. */
@@ -88,12 +88,12 @@ public class Item {
     /** Currency code (e.g., USD, EUR). */
     private Currency currency;
 
-    /** Available size options for the item (e.g., S, M, L). */
-    private List<ItemSize> sizes;
-    /** List of optional toppings for the item. */
-    private List<Topping> toppings;
-    /** List of modifier groups for optional selection (e.g., extra cheese). */
-    private List<ModifierGroup> modifierGroups;
+//    /** Available size options for the item (e.g., S, M, L). */
+//    private List<ItemSize> sizes;
+//    /** List of optional toppings for the item. */
+//    private List<Topping> toppings;
+//    /** List of modifier groups for optional selection (e.g., extra cheese). */
+//    private List<ModifierGroup> modifierGroups;
 
     /** Whether the item is currently available for sale. */
     private boolean available;
@@ -101,17 +101,17 @@ public class Item {
     private boolean outOfStock;
     /** Whether the item is seasonal. */
     private boolean seasonal;
-    /** Preparation time in minutes. */
-    private int prepTime;
-    /** Kitchen station responsible for preparing the item (e.g., grill, barista, fryer). */
-    private String kitchenStation;
-    /** Whether the item requires cooking before serving. */
-    private boolean requireCooking;
+//    /** Preparation time in minutes. */
+//    private int prepTime;
+//    /** Kitchen station responsible for preparing the item (e.g., grill, barista, fryer). */
+//    private String kitchenStation;
+//    /** Whether the item requires cooking before serving. */
+//    private boolean requireCooking;
 
     /** Main image URL of the item. */
     private String image;
-    /** List of additional images for the item. */
-    private List<String> gallery;
+//    /** List of additional images for the item. */
+//    private List<String> gallery;
 
     /** Average rating of the item. */
     private double rating;
@@ -129,15 +129,17 @@ public class Item {
     private boolean isFeatured;
     /** Whether the item is top-rated among customers. */
     private boolean isTopRated;
+//    /** Whether the item is specially curated or prepared by the head chef. */
+//    private boolean chefSpecial;
 
     /** ID of the menu this item belongs to. */
     private int menuId;
-    /** List of combo IDs that include this item. */
-    private List<Integer> comboIds;
-    /** List of related item IDs for recommendations. */
-    private List<Integer> relatedItemIds;
-    /** Brand associated with the item (e.g., Starbucks, KFC). */
-    private String brand;
+//    /** List of combo IDs that include this item. */
+//    private List<Integer> comboIds;
+//    /** List of related item IDs for recommendations. */
+//    private List<Integer> relatedItemIds;
+//    /** Brand associated with the item (e.g., Starbucks, KFC). */
+//    private String brand;
 
     /** Whether the item is available for delivery. */
     private boolean allowDelivery;

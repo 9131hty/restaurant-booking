@@ -1,4 +1,4 @@
-package com.restaurant.item.model;
+package com.restaurant.item.model.dump;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

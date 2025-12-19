@@ -1,4 +1,4 @@
-package com.restaurant.item.model;
+package com.restaurant.item.model.dump;
 
 import com.restaurant.common.enumeration.MeasurementUnit;
 import lombok.Data;
