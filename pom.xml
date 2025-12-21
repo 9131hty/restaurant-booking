@@ -222,8 +222,14 @@
             <version>1.18.42</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
 
-<!--        &lt;!&ndash; Toolchains &ndash;&gt;-->
+        <!--        &lt;!&ndash; Toolchains &ndash;&gt;-->
 <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-toolchains-plugin &ndash;&gt;-->
 <!--        <dependency>-->
 <!--            <groupId>org.apache.maven.plugins</groupId>-->
