@@ -1,7 +1,12 @@
 package com.restaurant.user.model;
 
 import com.restaurant.common.enumeration.*;
+import com.restaurant.user.enumeration.Role;
+import com.restaurant.user.enumeration.SalaryType;
+import com.restaurant.user.enumeration.ShiftType;
 import com.restaurant.user.enumeration.StaffStatus;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.DayOfWeek;
@@ -17,6 +22,8 @@ import java.util.UUID;
  * encapsulating employment status, operational role, permissions, work scheduling,
  * and compensation details required for internal restaurant operations.
  */
+@Data
+@NoArgsConstructor
 public class StaffProfile {
 
     /** Unique identifier linking this staff profile directly to the corresponding user identity within the system. */

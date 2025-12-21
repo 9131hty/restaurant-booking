@@ -1,4 +1,4 @@
-package com.restaurant.common.enumeration;
+package com.restaurant.user.enumeration;
 
 public enum ShiftType {
     MORNING,

@@ -1,6 +1,5 @@
 package com.restaurant.user.model;
 
-import com.restaurant.common.enumeration.Role;
 import com.restaurant.user.enumeration.UserStatus;
 import com.restaurant.user.enumeration.UserType;
 import lombok.Data;

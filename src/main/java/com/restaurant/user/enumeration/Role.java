@@ -1,4 +1,4 @@
-package com.restaurant.common.enumeration;
+package com.restaurant.user.enumeration;
 
 /**
  * Represents different user roles in the restaurant system.

@@ -1,6 +1,6 @@
 package com.restaurant.user.model;
 
-import com.restaurant.common.enumeration.LoyaltyTier;
+import com.restaurant.user.enumeration.LoyaltyTier;
 import com.restaurant.common.enumeration.OrderChannel;
 import com.restaurant.common.model.dump.Address;
 import com.restaurant.user.enumeration.CustomerType;

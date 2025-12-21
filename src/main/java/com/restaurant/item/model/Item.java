@@ -25,12 +25,12 @@ public class Item {
     /** Unique identifier for the item. */
     private int id;
     /** Stock Keeping Unit (SKU) code for the item. */
-    private String sku;
+//    private String sku;
 
     /** Name of the item in the main language. */
     private String name;
     /** Localized name of the item. */
-    private String localName;
+//    private String localName;
     /** Cuisine type. */
     private Cuisine cuisine;
     /** Full description of the item. */
@@ -45,54 +45,54 @@ public class Item {
     /** Type of the item as defined in ItemType enum. */
     private ItemType itemType;
     /** Tags associated with the item (e.g., Spicy, Vegan). */
-    private List<Integer> tagIds;
+    private List<Tag> tags;
     /** Whether the item is vegetarian. */
-    private boolean vegetarian;
+//    private boolean vegetarian;
     /** Whether the item is vegan. */
-    private boolean vegan;
+//    private boolean vegan;
     /** Whether the item is gluten-free. */
-    private boolean glutenFree;
+//    private boolean glutenFree;
     /** Whether the item is spicy. */
-    private boolean spicy;
+//    private boolean spicy;
     /** Whether the item is halal. */
-    private boolean halal;
+//    private boolean halal;
     /** Whether the item contains alcohol. */
-    private boolean containsAlcohol;
+//    private boolean containsAlcohol;
 
     /** List of ingredients used in the item. */
     private List<Ingredient> ingredients;
     /** List of allergen information (e.g., peanuts, milk). */
-    private List<String> allergenInfo;
+//    private List<String> allergenInfo;
 
     /** Caloric value of the item. */
-    private int calories;
+//    private int calories;
     /** Protein content in grams. */
-    private double protein;
+//    private double protein;
     /** Fat content in grams. */
-    private double fat;
+//    private double fat;
     /** Carbohydrate content in grams. */
-    private double carbs;
+//    private double carbs;
     /** Sugar content in grams. */
-    private double sugar;
+//    private double sugar;
     /** Sodium content in milligrams. */
-    private double sodium;
+//    private double sodium;
 
     /** Base price of the item before discount. */
     private double basePrice;
     /** Discount percentage applied to the base price. */
     private double discount;
     /** Final price after applying discount. */
-    private double finalPrice;
+//    private double finalPrice;
     /** Whether the item is currently on sale. */
     private boolean onSale;
     /** Currency code (e.g., USD, EUR). */
     private Currency currency;
 
-//    /** Available size options for the item (e.g., S, M, L). */
+    /** Available size options for the item (e.g., S, M, L). */
 //    private List<ItemSize> sizes;
-//    /** List of optional toppings for the item. */
+    /** List of optional toppings for the item. */
 //    private List<Topping> toppings;
-//    /** List of modifier groups for optional selection (e.g., extra cheese). */
+    /** List of modifier groups for optional selection (e.g., extra cheese). */
 //    private List<ModifierGroup> modifierGroups;
 
     /** Whether the item is currently available for sale. */
@@ -101,16 +101,16 @@ public class Item {
     private boolean outOfStock;
     /** Whether the item is seasonal. */
     private boolean seasonal;
-//    /** Preparation time in minutes. */
+    /** Preparation time in minutes. */
 //    private int prepTime;
-//    /** Kitchen station responsible for preparing the item (e.g., grill, barista, fryer). */
+    /** Kitchen station responsible for preparing the item (e.g., grill, barista, fryer). */
 //    private String kitchenStation;
-//    /** Whether the item requires cooking before serving. */
+    /** Whether the item requires cooking before serving. */
 //    private boolean requireCooking;
 
     /** Main image URL of the item. */
     private String image;
-//    /** List of additional images for the item. */
+    /** List of additional images for the item. */
 //    private List<String> gallery;
 
     /** Average rating of the item. */
@@ -120,7 +120,7 @@ public class Item {
     /** Number of times the item has been viewed. */
     private int viewCount;
     /** Total number of reviews received. */
-    private int reviewCount;
+//    private int reviewCount;
     /** Total number of units sold. */
     private int soldCount;
     /** Whether the item is a signature item. */
@@ -129,28 +129,28 @@ public class Item {
     private boolean isFeatured;
     /** Whether the item is top-rated among customers. */
     private boolean isTopRated;
-//    /** Whether the item is specially curated or prepared by the head chef. */
+    /** Whether the item is specially curated or prepared by the head chef. */
 //    private boolean chefSpecial;
 
     /** ID of the menu this item belongs to. */
     private int menuId;
-//    /** List of combo IDs that include this item. */
+    /** List of combo IDs that include this item. */
 //    private List<Integer> comboIds;
-//    /** List of related item IDs for recommendations. */
+    /** List of related item IDs for recommendations. */
 //    private List<Integer> relatedItemIds;
-//    /** Brand associated with the item (e.g., Starbucks, KFC). */
+    /** Brand associated with the item (e.g., Starbucks, KFC). */
 //    private String brand;
 
     /** Whether the item is available for delivery. */
-    private boolean allowDelivery;
+//    private boolean allowDelivery;
     /** Whether the item is available for pickup. */
-    private boolean allowPickup;
+//    private boolean allowPickup;
     /** Whether the item is available for dine-in. */
-    private boolean allowDineIn;
+//    private boolean allowDineIn;
     /** Whether the item is hidden from the menu or UI. */
     private boolean hidden;
     /** Whether the item is age-restricted (e.g., alcoholic beverages). */
-    private boolean ageRestricted;
+//    private boolean ageRestricted;
 
     /** Additional notes for internal or customer information. */
     private String notes;
