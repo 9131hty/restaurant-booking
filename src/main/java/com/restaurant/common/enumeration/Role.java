@@ -21,6 +21,12 @@ public enum Role {
     /** General staff role. */
     STAFF("STF"),
 
+    /** Waiter role */
+    WAITER("WT"),
+
+    /** Cashier role */
+    CASHIER("CAS"),
+
     /** Regular user/customer role. */
     USER("U");
 
