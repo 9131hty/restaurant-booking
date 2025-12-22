@@ -142,6 +142,14 @@
             </exclusions>
         </dependency>
 
+        <!-- MyBatis -->
+        <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.5.19</version>
+        </dependency>
+
 <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper &ndash;&gt;-->
 <!--        <dependency>-->
 <!--            <groupId>org.apache.tomcat.embed</groupId>-->

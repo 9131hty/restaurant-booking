@@ -1,4 +1,4 @@
-package com.restaurant.common.hikaricp;
+package com.restaurant.infrastructure.datasource;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -18,11 +18,11 @@ import java.util.Properties;
  * application lifecycle.
  * </p>
  */
-public final class HikariCP {
+public final class HikariDataSourceProvider {
 
     private static volatile HikariDataSource dataSource;
 
-    private HikariCP() {
+    private HikariDataSourceProvider() {
     }
 
     /**
@@ -39,7 +39,7 @@ public final class HikariCP {
 
         try {
             Properties props = new Properties();
-            InputStream in = HikariCP.class.getClassLoader()
+            InputStream in = HikariDataSourceProvider.class.getClassLoader()
                     .getResourceAsStream("config/hikaricp.properties");
 
             if (in == null) {
@@ -54,7 +54,7 @@ public final class HikariCP {
             long maxLifetime = Long.parseLong(props.getProperty("pool.maxLifetime", "1800000"));
             long connectionTimeout = Long.parseLong(props.getProperty("pool.connectionTimeout", "30000"));
 
-            URL dbUrl = HikariCP.class.getClassLoader()
+            URL dbUrl = HikariDataSourceProvider.class.getClassLoader()
                     .getResource("restaurant.sqlite3");
 
             if (dbUrl == null) {

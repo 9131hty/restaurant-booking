@@ -1,7 +1,7 @@
 package com.restaurant.menu.model;
 
 import com.restaurant.common.enumeration.*;
-import com.restaurant.common.model.Tag;
+import com.restaurant.tag.domain.model.Tag;
 import com.restaurant.menu.enumeration.MenuType;
 import com.restaurant.menu.enumeration.ServiceStyle;
 import com.restaurant.menu.enumeration.Theme;

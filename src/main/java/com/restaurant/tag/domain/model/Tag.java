@@ -1,4 +1,4 @@
-package com.restaurant.common.model;
+package com.restaurant.tag.domain.model;
 
 import com.restaurant.common.enumeration.Status;
 import lombok.Data;

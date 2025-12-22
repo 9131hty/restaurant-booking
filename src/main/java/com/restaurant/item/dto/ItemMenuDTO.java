@@ -1,6 +1,6 @@
 package com.restaurant.item.dto;
 
-import com.restaurant.common.model.Tag;
+import com.restaurant.tag.domain.model.Tag;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

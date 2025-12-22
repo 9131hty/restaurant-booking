@@ -1,4 +1,4 @@
-package com.restaurant.common.enumeration;
+package com.restaurant.reservation.enumeration;
 
 /**
  * Represents different types of tables in the restaurant.

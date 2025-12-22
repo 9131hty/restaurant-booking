@@ -1,12 +1,12 @@
-package com.restaurant.item.model;
+package com.restaurant.item.domain.model;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 import com.restaurant.common.enumeration.Cuisine;
 import com.restaurant.common.enumeration.Currency;
-import com.restaurant.common.model.Tag;
-import com.restaurant.item.enumeration.ItemType;
+import com.restaurant.tag.domain.model.Tag;
+import com.restaurant.item.domain.enumeration.ItemType;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

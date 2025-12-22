@@ -1,0 +1,1 @@
+For future implement of Apache Shiro - User authentication

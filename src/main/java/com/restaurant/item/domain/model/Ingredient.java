@@ -1,8 +1,8 @@
-package com.restaurant.item.model;
+package com.restaurant.item.domain.model;
 
 import com.restaurant.common.enumeration.MeasurementUnit;
 import com.restaurant.common.enumeration.Status;
-import com.restaurant.item.enumeration.IngredientCategory;
+import com.restaurant.item.domain.enumeration.IngredientCategory;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

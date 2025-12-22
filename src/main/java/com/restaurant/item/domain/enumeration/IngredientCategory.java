@@ -1,4 +1,4 @@
-package com.restaurant.item.enumeration;
+package com.restaurant.item.domain.enumeration;
 
 public enum IngredientCategory {
     DAIRY,
