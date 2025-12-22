@@ -18,7 +18,7 @@ import java.util.UUID;
 public class User {
 
     /** Unique system-wide identifier that represents the immutable identity of the user across all related domains. */
-    private UUID id;
+    private int id;
 
     /** Unique username used for authentication and human-readable identification within the system. */
     private String username;

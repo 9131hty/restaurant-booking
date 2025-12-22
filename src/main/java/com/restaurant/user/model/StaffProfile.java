@@ -27,7 +27,7 @@ import java.util.UUID;
 public class StaffProfile {
 
     /** Unique identifier linking this staff profile directly to the corresponding user identity within the system. */
-    private UUID userId;
+    private int userId;
 
     /** Current employment and operational status of the staff member, reflecting availability and lifecycle state. */
     private StaffStatus status;

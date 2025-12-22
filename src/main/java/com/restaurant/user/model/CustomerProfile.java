@@ -22,7 +22,7 @@ import java.util.UUID;
 public class CustomerProfile {
 
     /** Unique identifier linking this customer profile to its corresponding user identity within the system. */
-    private UUID userId;
+    private int userId;
 
     /** Historical list of reservation identifiers associated with the customer, typically managed in a separate persistence structure. */
 //    private List<Integer> reservationHistoryIds;
