@@ -14,12 +14,6 @@ import lombok.NoArgsConstructor;
 public class ItemIngredient {
 
     /**
-     * Identifier of the Item that uses the ingredient.
-     * This is part of the composite primary key in the relational mapping.
-     */
-    private int itemId;
-
-    /**
      * Identifier of the Ingredient referenced by the item.
      * This is part of the composite primary key in the relational mapping.
      */

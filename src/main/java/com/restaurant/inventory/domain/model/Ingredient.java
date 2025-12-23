@@ -1,4 +1,4 @@
-package com.restaurant.item.domain.model;
+package com.restaurant.inventory.domain.model;
 
 import com.restaurant.common.enumeration.MeasurementUnit;
 import com.restaurant.common.enumeration.Status;

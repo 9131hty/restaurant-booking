@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.restaurant.common.enumeration.Cuisine;
 import com.restaurant.common.enumeration.Currency;
+import com.restaurant.inventory.domain.model.Ingredient;
 import com.restaurant.tag.domain.model.Tag;
 import com.restaurant.item.domain.enumeration.ItemType;
 import lombok.Data;
