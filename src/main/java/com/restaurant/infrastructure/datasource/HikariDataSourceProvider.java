@@ -27,7 +27,7 @@ public final class HikariDataSourceProvider {
 
     /**
      * Initializes the HikariCP connection pool using configuration loaded
-     * from {@code config/hikaricp.properties}.
+     * from {@code hikaricp/hikaricp.properties}.
      *
      * @throws IllegalStateException if the pool is already initialized
      * @throws RuntimeException      if configuration loading or pool initialization fails
@@ -40,7 +40,7 @@ public final class HikariDataSourceProvider {
         try {
             Properties props = new Properties();
             InputStream in = HikariDataSourceProvider.class.getClassLoader()
-                    .getResourceAsStream("config/hikaricp.properties");
+                    .getResourceAsStream("hikaricp/hikaricp.properties");
 
             if (in == null) {
                 throw new RuntimeException("hikaricp.properties not found in classpath");
