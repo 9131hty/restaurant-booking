@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="cacheEnabled" value="false"/>
+        <setting name="lazyLoadingEnabled" value="false"/>
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <setting name="logImpl" value="SLF4J"/>
+    </settings>
+
+    <typeAliases>
+        <typeAlias
+                alias="Ingredient"
+                type="com.restaurant.inventory.domain.model.Ingredient"/>
+
+        <typeAlias
+                alias="ItemIngredient"
+                type="com.restaurant.item.domain.model.ItemIngredient"/>
+
+        <typeAlias
+                alias="Tag"
+                type="com.restaurant.tag.domain.model.Tag"/>
+    </typeAliases>
+
+    <typeHandlers>
+        <typeHandler
+                javaType="java.time.LocalDateTime"
+                handler="com.restaurant.infrastructure.mybatis.typehandler.LocalDateTimeTypeHandler"/>
+
+        <typeHandler
+                javaType="com.restaurant.common.enumeration.Status"
+                handler="com.restaurant.infrastructure.mybatis.typehandler.EnumNameTypeHandler"/>
+
+        <typeHandler
+                javaType="com.restaurant.common.enumeration.MeasurementUnit"
+                handler="com.restaurant.infrastructure.mybatis.typehandler.EnumNameTypeHandler"/>
+
+        <typeHandler
+                javaType="com.restaurant.item.domain.enumeration.IngredientCategory"
+                handler="com.restaurant.infrastructure.mybatis.typehandler.EnumNameTypeHandler"/>
+    </typeHandlers>
+
+    <environments default="sqlite">
+        <environment id="sqlite">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="org.sqlite.JDBC"/>
+                <property name="url" value="jdbc:sqlite:restaurant.db"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="mybatis/mapper/inventory/IngredientMapper.xml"/>
+        <mapper resource="mybatis/mapper/tag/TagMapper.xml"/>
+        <mapper resource="mybatis/mapper/item/ItemMapper.xml"/>
+    </mappers>
+
+</configuration>
