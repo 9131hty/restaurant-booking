@@ -1,0 +1,68 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.restaurant.tag.infrastructure.persistence.TagMapper">
+
+    <resultMap id="TagResultMap" type="com.restaurant.tag.domain.model.Tag">
+
+        <id property="id" column="id" />
+
+        <result property="name" column="name" />
+        <result property="slug" column="slug" />
+        <result property="description" column="description" />
+
+        <result property="status"
+            column="status"
+            javaType="com.restaurant.common.enumeration.Status"
+            jdbcType="VARCHAR" />
+
+        <result property="usageCount" column="usage_count" />
+
+        <result property="createdAt" column="created_at"
+            javaType="java.time.LocalDateTime" />
+
+        <result property="updatedAt" column="updated_at"
+            javaType="java.time.LocalDateTime" />
+    </resultMap>
+
+    <select id="selectById" resultMap="TagMap"> 
+        SELECT * FROM tag WHERE id = #{id} 
+    </select>
+
+    <select id="selectAll" resultMap="TagMap"> 
+        SELECT * FROM tag ORDER BY name 
+    </select>
+
+    <insert id="insert" parameterType="com.restaurant.tag.domain.model.Tag" useGeneratedKeys="true" keyProperty="id"> 
+        INSERT INTO tag (name, slug, description, status, usage_count, created_at) 
+        VALUES (#{name}, #{slug}, #{description}, #{status}, #{usageCount}, #{createdAt}) 
+    </insert>
+
+    <update id="update" parameterType="com.restaurant.tag.domain.model.Tag"> 
+        UPDATE tag 
+        SET name = #{name}, 
+            slug = #{slug}, 
+            status = #{status}, 
+            usage_count = #{usageCount}, 
+            updated_at = #{updatedAt} 
+        WHERE id = #{id} 
+    </update>
+
+    <delete id="deleteById" parameterType="int"> 
+        DELETE FROM tag WHERE id = #{id} 
+    </delete>
+
+    <update id="active"> 
+        UPDATE tag 
+        SET status = 'ACTIVE', 
+            updated_at = NOW() 
+        WHERE id = #{id} 
+    </update>
+
+    <update id="deactivate"> 
+        UPDATE tag 
+        SET status = 'INACTIVE', 
+            updated_at = NOW() 
+        WHERE id = #{id} 
+    </update>
+
+</mapper>
