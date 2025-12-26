@@ -1,0 +1,96 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.restaurant.ingredient.infrastructure.persistence.IngredientMapper">
+
+    <resultMap id="IngredientResultMap" type="com.restaurant.inventory.domain.model.Ingredient">
+
+        <id property="id" column="id" />
+
+        <result property="name" column="name" />
+
+        <result property="measurementUnit"
+            column="measurement_unit"
+            javaType="com.restaurant.common.enumeration.MeasurementUnit" />
+
+        <result property="costPerUnit" column="cost_per_unit" />
+        <result property="stockQuantity" column="stock_quantity" />
+        <result property="minStockQuantity" column="min_stock_quantity" />
+
+        <result property="category"
+            column="category"
+            javaType="com.restaurant.item.domain.enumeration.IngredientCategory" />
+
+        <result property="allergen"
+            column="allergen"
+            javaType="boolean" />
+
+        <result property="description" column="description" />
+
+        <result property="status"
+            column="status"
+            javaType="com.restaurant.common.enumeration.Status" />
+
+        <result property="createdAt"
+            column="created_at"
+            javaType="java.time.LocalDateTime" />
+
+        <result property="updatedAt"
+            column="updated_at"
+            javaType="java.time.LocalDateTime" />
+    </resultMap>
+
+    <select id="selectById" parameterType="int" resultMap="IngredientResultMap"> 
+        SELECT * FROM ingredient WHERE id = #{id} 
+    </select>
+
+    <select id="selectAll" resultMap="IngredientResultMap"> 
+        SELECT * FROM ingredient ORDER BY name 
+    </select>
+
+    <select id="selectAllActive" resultMap="IngredientResultMap">
+        SELECT * FROM ingredient WHERE status = 'ACTIVE' ORDER BY name
+    </select>
+
+    <insert id="insert" parameterType="com.restaurant.inventory.domain.model.Ingredient" useGeneratedKeys="true" keyProperty="id"> 
+        INSERT INTO ingredient (name, measurement_unit, cost_per_unit, stock_quantity, 
+                                min_stock_quantity, category, allergen, description, status,
+                                created_at, updated_at) 
+        VALUES (#{name}, #{measurementUnit}, #{costPerUnit}, #{stockQuantity},
+                #{minStockQuantity}, #{category}, #{allergen}, #{description}, 
+                #{status}, #{createdAt}, #{updatedAt}) 
+    </insert>
+
+    <update id="update" parameterType="com.restaurant.inventory.domain.model.Ingredient"> 
+        UPDATE ingredient 
+        SET name = #{name}, 
+            measurement_unit = #{measurementUnit}, 
+            cost_per_unit = #{costPerUnit},
+            min_stock_quantity = #{minStockQuantity}, 
+            category = #{category}, 
+            allergen = #{allergen},
+            description = #{description}, 
+            status = #{status}, 
+            updated_at = #{updatedAt} 
+        WHERE id = #{id} 
+    </update>
+
+    <update id="updateStock"> 
+        UPDATE ingredient 
+        SET stock_quantity = #{newStockQuantity}, 
+            updated_at = CURRENT_TIMESTAMP 
+        WHERE id = #{id} 
+    </update>
+
+    <update id="activate"> 
+    UPDATE ingredient 
+    SET status = 'ACTIVE', 
+        updated_at = CURRENT_TIMESTAMP 
+    WHERE id = #{id} </update>
+
+    <update id="deactivate"> 
+        UPDATE ingredient 
+        SET status = 'INACTIVE', 
+            updated_at = CURRENT_TIMESTAMP 
+        WHERE id = #{id} </update>
+
+</mapper>
