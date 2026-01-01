@@ -9,5 +9,8 @@ public interface IngredientRepository {
     Optional<Ingredient> find(int id);
     List<Ingredient> findAll();
     void save(Ingredient ingredient);
-    void remove(Ingredient ingredient);
+    void restock(int id, int quantity);
+    void consume(int id, int quantity);
+    void activate(int id);
+    void deactivate(int id);
 }
