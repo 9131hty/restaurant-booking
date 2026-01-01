@@ -1,15 +1,12 @@
 package com.restaurant.common.config;
 
-import com.restaurant.common.hikaricp.HikariCP;
+import com.restaurant.infrastructure.datasource.HikariDataSourceProvider;
+import com.restaurant.infrastructure.mybatis.SqlSessionFactoryProvider;
 import com.zaxxer.hikari.HikariDataSource;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.annotation.WebListener;
 import org.flywaydb.core.Flyway;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.io.File;
 
 /**
  * Controls application startup and shutdown behavior.
@@ -31,9 +28,10 @@ public class AppContextListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         try {
-            HikariCP.init();
+            HikariDataSourceProvider.init();
 
-            HikariDataSource dataSource = HikariCP.getDataSource();
+            HikariDataSource dataSource = HikariDataSourceProvider.getDataSource();
+            SqlSessionFactoryProvider.init(dataSource);
 
             Flyway flyway = Flyway.configure()
                     .dataSource(dataSource)
@@ -42,6 +40,7 @@ public class AppContextListener implements ServletContextListener {
                     .load();
 
             flyway.migrate();
+
         } catch (Exception e) {
             System.err.println("Application startup error:");
             e.printStackTrace();
@@ -55,6 +54,6 @@ public class AppContextListener implements ServletContextListener {
      */
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
-        HikariCP.shutdown();
+        HikariDataSourceProvider.shutdown();
     }
 }
