@@ -51,6 +51,31 @@
         SELECT * FROM ingredient WHERE status = 'ACTIVE' ORDER BY name
     </select>
 
+    <select id="selectStockById" parameterType="int" resultType="int">
+        SELECT stock_quantity FROM ingredient WHERE id = #{id}
+    </select>
+
+    <select id="selectStockInfoById" parameterType="int" resultType="com.restaurant.inventory.domain.model.IngredientStock">
+        SELECT stock_quantity     AS stockQuantity,
+               min_stock_quantity AS minStockQuantity
+        FROM ingredient
+        WHERE id = #{id}
+    </select>
+
+    <update id="increaseStock">
+        UPDATE ingredient
+        SET stock_quantity = stock_quantity + #{quantity},
+            updated_at = CURRENT_TIMESTAMP
+        WHERE id = #{id}
+    </update>
+
+    <update id="consumeStock">
+        UPDATE ingredient
+        SET stock_quantity = stock_quantity - #{quantity},
+            updated_at = CURRENT_TIMESTAMP
+        WHERE id = #{id} AND stock_quantity >= #{quantity}
+    </update>
+
     <insert id="insert" parameterType="com.restaurant.inventory.domain.model.Ingredient" useGeneratedKeys="true" keyProperty="id"> 
         INSERT INTO ingredient (name, measurement_unit, cost_per_unit, stock_quantity, 
                                 min_stock_quantity, category, allergen, description, status,
