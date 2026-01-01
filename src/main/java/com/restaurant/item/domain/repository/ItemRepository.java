@@ -9,5 +9,5 @@ public interface ItemRepository {
     Optional<Item> find(int id);
     List<Item> findAll();
     void save(Item item);
-    void remove(Item item);
+    void remove(int id);
 }

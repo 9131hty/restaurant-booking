@@ -113,6 +113,8 @@ public class Item {
     private String image;
     /** List of additional images for the item. */
 //    private List<String> gallery;
+    /** */
+    private String recipe;
 
     /** Average rating of the item. */
     private double rating;
