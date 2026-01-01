@@ -1,9 +1,8 @@
-package com.restaurant.item.dto;
+package com.restaurant.item.translate;
 
 import com.restaurant.common.enumeration.Cuisine;
 import com.restaurant.inventory.domain.model.Ingredient;
 import com.restaurant.tag.domain.model.Tag;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,7 +12,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-public class ItemDetailDTO {
+public class Detail {
     private int id;
     private String name;
     private Cuisine cuisine;

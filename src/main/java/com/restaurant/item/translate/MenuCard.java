@@ -1,4 +1,4 @@
-package com.restaurant.item.dto;
+package com.restaurant.item.translate;
 
 import com.restaurant.common.enumeration.Cuisine;
 import com.restaurant.tag.domain.model.Tag;
@@ -11,7 +11,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-public class ItemMenuDTO {
+public class MenuCard {
     private int id;
     private String name;
     private String category;

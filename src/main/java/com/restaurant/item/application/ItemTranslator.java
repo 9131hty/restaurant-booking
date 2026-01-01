@@ -1,51 +1,51 @@
 package com.restaurant.item.application;
 
 import com.restaurant.item.domain.model.Item;
-import com.restaurant.item.dto.ItemDetailDTO;
-import com.restaurant.item.dto.ItemDisplayDTO;
-import com.restaurant.item.dto.ItemMenuDTO;
+import com.restaurant.item.translate.Detail;
+import com.restaurant.item.translate.Overview;
+import com.restaurant.item.translate.MenuCard;
 
 public class ItemTranslator {
 
-    public static ItemDisplayDTO toItemDisplay(Item item) {
-        ItemDisplayDTO dto = new ItemDisplayDTO();
-        dto.setId(item.getId());
-        dto.setName(item.getName());
-        dto.setCategory(item.getCategory());
-        dto.setSubCategory(item.getSubCategory());
-        dto.setShortDescription(item.getShortDescription());
-        dto.setPrice(item.getBasePrice());
-        dto.setImage(item.getImage());
-        return dto;
+    public static Overview overview(Item item) {
+        Overview translation = new Overview();
+        translation.setId(item.getId());
+        translation.setName(item.getName());
+        translation.setCategory(item.getCategory());
+        translation.setSubCategory(item.getSubCategory());
+        translation.setShortDescription(item.getShortDescription());
+        translation.setPrice(item.getBasePrice());
+        translation.setImage(item.getImage());
+        return translation;
     }
 
-    public static ItemDetailDTO toItemDetail(Item item) {
-        ItemDetailDTO dto = new ItemDetailDTO();
-        dto.setId(item.getId());
-        dto.setName(item.getName());
-        dto.setCuisine(item.getCuisine());
-        dto.setCategory(item.getCategory());
-        dto.setSubCategory(item.getSubCategory());
-        dto.setTags(item.getTags());
-        dto.setRating(item.getRating());
-        dto.setDescription(item.getDescription());
-        dto.setIngredients(item.getIngredients());
-        dto.setImage(item.getImage());
-        dto.setRecipe(item.getRecipe());
-        return dto;
+    public static Detail detail(Item item) {
+        Detail translation = new Detail();
+        translation.setId(item.getId());
+        translation.setName(item.getName());
+        translation.setCuisine(item.getCuisine());
+        translation.setCategory(item.getCategory());
+        translation.setSubCategory(item.getSubCategory());
+        translation.setTags(item.getTags());
+        translation.setRating(item.getRating());
+        translation.setDescription(item.getDescription());
+        translation.setIngredients(item.getIngredients());
+        translation.setImage(item.getImage());
+        translation.setRecipe(item.getRecipe());
+        return translation;
     }
 
-    public static ItemMenuDTO toItemMenu(Item item) {
-        ItemMenuDTO dto = new ItemMenuDTO();
-        dto.setId(item.getId());
-        dto.setName(item.getName());
-        dto.setCategory(item.getCategory());
-        dto.setSubCategory(item.getSubCategory());
-        dto.setCuisine(item.getCuisine());
-        dto.setShortDescription(item.getShortDescription());
-        dto.setBasePrice(item.getBasePrice());
-        dto.setDiscount(item.getDiscount());
-        dto.setTags(item.getTags());
-        return dto;
+    public static MenuCard menuCard(Item item) {
+        MenuCard translation = new MenuCard();
+        translation.setId(item.getId());
+        translation.setName(item.getName());
+        translation.setCategory(item.getCategory());
+        translation.setSubCategory(item.getSubCategory());
+        translation.setCuisine(item.getCuisine());
+        translation.setShortDescription(item.getShortDescription());
+        translation.setBasePrice(item.getBasePrice());
+        translation.setDiscount(item.getDiscount());
+        translation.setTags(item.getTags());
+        return translation;
     }
 }
