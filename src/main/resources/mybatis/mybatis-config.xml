@@ -28,21 +28,37 @@
     </typeAliases>
 
     <typeHandlers>
+
+        <!-- common -->
+        <typeHandler
+                javaType="com.restaurant.common.enumeration.Cuisine"
+                handler="com.restaurant.infrastructure.mybatis.typehandler.EnumTypeHandler"/>
+
+        <typeHandler
+                javaType="com.restaurant.common.enumeration.Currency"
+                handler="com.restaurant.infrastructure.mybatis.typehandler.EnumTypeHandler"/>
+
+        <typeHandler
+                javaType="com.restaurant.common.enumeration.MeasurementUnit"
+                handler="com.restaurant.infrastructure.mybatis.typehandler.EnumTypeHandler"/>
+
+        <typeHandler
+                javaType="com.restaurant.common.enumeration.Status"
+                handler="com.restaurant.infrastructure.mybatis.typehandler.EnumTypeHandler"/>
+
+        <!-- item -->
+        <typeHandler
+                javaType="com.restaurant.item.domain.enumeration.IngredientCategory"
+                handler="com.restaurant.infrastructure.mybatis.typehandler.EnumTypeHandler"/>
+
+        <typeHandler
+                javaType="com.restaurant.item.domain.enumeration.ItemType"
+                handler="com.restaurant.infrastructure.mybatis.typehandler.EnumTypeHandler"/>
+
         <typeHandler
                 javaType="java.time.LocalDateTime"
                 handler="com.restaurant.infrastructure.mybatis.typehandler.LocalDateTimeTypeHandler"/>
 
-        <typeHandler
-                javaType="com.restaurant.common.enumeration.Status"
-                handler="com.restaurant.infrastructure.mybatis.typehandler.EnumNameTypeHandler"/>
-
-        <typeHandler
-                javaType="com.restaurant.common.enumeration.MeasurementUnit"
-                handler="com.restaurant.infrastructure.mybatis.typehandler.EnumNameTypeHandler"/>
-
-        <typeHandler
-                javaType="com.restaurant.item.domain.enumeration.IngredientCategory"
-                handler="com.restaurant.infrastructure.mybatis.typehandler.EnumNameTypeHandler"/>
     </typeHandlers>
 
     <environments default="sqlite">

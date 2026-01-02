@@ -1,13 +1,14 @@
 package com.restaurant.infrastructure.mybatis;
 
+import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.mapping.Environment;
 import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-import org.apache.ibatis.transaction.TransactionFactory;
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
 
 import javax.sql.DataSource;
+import java.io.InputStream;
 
 public final class SqlSessionFactoryProvider {
 
@@ -17,21 +18,23 @@ public final class SqlSessionFactoryProvider {
 
     public static void init(DataSource dataSource) {
         try {
-            TransactionFactory transactionFactory =
-                    new JdbcTransactionFactory();
+            InputStream inputStream =
+                    Resources.getResourceAsStream("mybatis/mybatis-config.xml");
 
-            Environment environment =
-                    new Environment("dev", transactionFactory, dataSource);
+            SqlSessionFactory factory =
+                    new SqlSessionFactoryBuilder().build(inputStream);
 
-            Configuration configuration =
-                    new Configuration(environment);
+            Configuration configuration = factory.getConfiguration();
 
-            configuration.addMapper(
-                    com.restaurant.item.infrastructure.persistence.ItemMapper.class
+            configuration.setEnvironment(
+                    new Environment(
+                            "dev",
+                            new JdbcTransactionFactory(),
+                            dataSource
+                    )
             );
 
-            sqlSessionFactory =
-                    new SqlSessionFactoryBuilder().build(configuration);
+            sqlSessionFactory = factory;
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to init MyBatis", e);
