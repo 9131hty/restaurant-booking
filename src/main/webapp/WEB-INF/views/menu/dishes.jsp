@@ -61,7 +61,7 @@
 <!-- ======= dish cards ===================================================================================================== -->
             <article data-animate="" id="ietzi7" class="group cjiayo-t-border dish-card">
                 <div id="iy7383" class="dish-image-wrapper"><img
-                        src="https://app.grapesjs.com/api/assets/random-image?query=%22bruschetta%20appetizer%22&amp;w=900&amp;h=600"
+                        src=""
                         alt="Heirloom Tomato Bruschetta" id="ijtmtc" class="group-hover:scale-[1.03] dish-image" /><span
                         class="dish-tag">Starter • V</span></div>
                 <div class="dish-content">
