@@ -170,4 +170,71 @@ public class Item {
     private String updatedBy;
     /** User who deleted the item record. */
     private String deletedBy;
+
+    /**
+     * Marks this item as newly created using the given timestamp.
+     *
+     * @param time the creation time
+     */
+    public void markCreated(LocalDateTime time) {
+        this.createdAt = time;
+        this.updatedAt = time;
+    }
+
+    /**
+     * Marks this item as newly created using the given timestamp and user.
+     *
+     * @param time the creation time
+     * @param user the user responsible for creation
+     */
+    public void markCreated(LocalDateTime time, String user) {
+        this.createdAt = time;
+        this.updatedAt = time;
+        this.createdBy = user;
+        this.updatedBy = user;
+    }
+
+    /**
+     * Marks this item as updated using the given timestamp.
+     *
+     * @param time the update time
+     */
+    public void markUpdated(LocalDateTime time) {
+        this.updatedAt = time;
+    }
+
+    /**
+     * Marks this item as updated using the given timestamp and user.
+     *
+     * @param time the update time
+     * @param user the user responsible for the update
+     */
+    public void markUpdated(LocalDateTime time, String user) {
+        this.updatedAt = time;
+        this.updatedBy = user;
+    }
+
+    /**
+     * Marks this item as softly deleted using the given timestamp.
+     *
+     * @param time the deletion time
+     */
+    public void markDeleted(LocalDateTime time) {
+        this.deletedAt = time;
+        this.hidden = true;
+        this.available = false;
+    }
+
+    /**
+     * Marks this item as softly deleted using the given timestamp and user.
+     *
+     * @param time the deletion time
+     * @param user the user responsible for the deletion
+     */
+    public void markDeleted(LocalDateTime time, String user) {
+        this.deletedAt = time;
+        this.deletedBy = user;
+        this.hidden = true;
+        this.available = false;
+    }
 }
