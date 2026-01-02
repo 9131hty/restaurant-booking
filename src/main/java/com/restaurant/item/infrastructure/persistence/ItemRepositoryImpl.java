@@ -48,7 +48,7 @@ public class ItemRepositoryImpl implements ItemRepository {
     @Override
     public void remove(int id) {
         try (SqlSession session = factory.openSession(false)) {
-            session.getMapper(ItemMapper.class).deleteById(id);
+            session.getMapper(ItemMapper.class).softDelete(id);
             session.commit();
         }
     }

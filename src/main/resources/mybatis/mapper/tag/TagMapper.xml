@@ -24,45 +24,57 @@
             javaType="java.time.LocalDateTime" />
     </resultMap>
 
-    <select id="selectById" resultMap="TagMap"> 
+    <select id="selectById" resultMap="TagResultMap">
         SELECT * FROM tag WHERE id = #{id} 
     </select>
 
-    <select id="selectAll" resultMap="TagMap"> 
+    <select id="selectAll" resultMap="TagResultMap">
         SELECT * FROM tag ORDER BY name 
     </select>
 
-    <insert id="insert" parameterType="com.restaurant.tag.domain.model.Tag" useGeneratedKeys="true" keyProperty="id"> 
-        INSERT INTO tag (name, slug, description, status, usage_count, created_at) 
-        VALUES (#{name}, #{slug}, #{description}, #{status}, #{usageCount}, #{createdAt}) 
+    <insert id="insert"
+            parameterType="com.restaurant.tag.domain.model.Tag"
+            useGeneratedKeys="true"
+            keyProperty="id">
+        INSERT INTO tag (
+            name, slug, description, status, usage_count,
+            created_at, updated_at
+        )
+        VALUES (
+            #{name}, #{slug}, #{description}, #{status}, #{usageCount},
+            #{createdAt}, #{updatedAt}
+        )
     </insert>
 
-    <update id="update" parameterType="com.restaurant.tag.domain.model.Tag"> 
-        UPDATE tag 
-        SET name = #{name}, 
-            slug = #{slug}, 
-            status = #{status}, 
-            usage_count = #{usageCount}, 
-            updated_at = #{updatedAt} 
-        WHERE id = #{id} 
+    <update id="update"
+            parameterType="com.restaurant.tag.domain.model.Tag">
+        UPDATE tag
+        SET name = #{name},
+            slug = #{slug},
+            description = #{description},
+            status = #{status},
+            usage_count = #{usageCount},
+            updated_at = #{updatedAt}
+        WHERE id = #{id}
     </update>
+
 
     <delete id="deleteById" parameterType="int"> 
         DELETE FROM tag WHERE id = #{id} 
     </delete>
 
-    <update id="active"> 
-        UPDATE tag 
-        SET status = 'ACTIVE', 
-            updated_at = NOW() 
-        WHERE id = #{id} 
+    <update id="active">
+        UPDATE tag
+        SET status = 'ACTIVE',
+            updated_at = #{updatedAt}
+        WHERE id = #{id}
     </update>
 
-    <update id="deactivate"> 
-        UPDATE tag 
-        SET status = 'INACTIVE', 
-            updated_at = NOW() 
-        WHERE id = #{id} 
+    <update id="deactivate">
+        UPDATE tag
+        SET status = 'INACTIVE',
+            updated_at = #{updatedAt}
+        WHERE id = #{id}
     </update>
 
 </mapper>

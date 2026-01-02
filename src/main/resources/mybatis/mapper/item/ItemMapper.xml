@@ -2,8 +2,176 @@
 
 <mapper namespace="com.restaurant.item.infrastructure.persistence.ItemMapper">
 
-    <resultMap id="ItemResultMap" type="com.restaurant.item.domain.model.Item">
+    <resultMap id="ItemResultMap"
+               type="com.restaurant.item.domain.model.Item">
+
+        <id property="id" column="id"/>
+
+        <result property="name" column="name"/>
+        <result property="cuisine"
+                column="cuisine"
+                javaType="com.restaurant.common.enumeration.Cuisine"/>
+        <result property="description" column="description"/>
+        <result property="shortDescription" column="short_description"/>
+
+        <result property="category" column="category"/>
+        <result property="subCategory" column="sub_category"/>
+
+        <result property="itemType"
+                column="item_type"
+                javaType="com.restaurant.item.domain.enumeration.ItemType"/>
+
+        <result property="basePrice" column="base_price"/>
+        <result property="discount" column="discount"/>
+        <result property="onSale" column="on_sale"/>
+        <result property="currency"
+                column="currency"
+                javaType="com.restaurant.common.enumeration.Currency"/>
+
+        <result property="available" column="available"/>
+        <result property="outOfStock" column="out_of_stock"/>
+        <result property="seasonal" column="seasonal"/>
+
+        <result property="image" column="image"/>
+        <result property="recipe" column="recipe"/>
+
+        <result property="rating" column="rating"/>
+        <result property="ratingCount" column="rating_count"/>
+        <result property="viewCount" column="view_count"/>
+        <result property="soldCount" column="sold_count"/>
+
+        <result property="isSignature" column="is_signature"/>
+        <result property="isFeatured" column="is_featured"/>
+        <result property="isTopRated" column="is_top_rated"/>
+
+        <result property="menuId" column="menu_id"/>
+        <result property="hidden" column="hidden"/>
+
+        <result property="notes" column="notes"/>
+
+        <result property="createdAt" column="created_at"
+                javaType="java.time.LocalDateTime"/>
+        <result property="updatedAt" column="updated_at"
+                javaType="java.time.LocalDateTime"/>
+        <result property="deletedAt" column="deleted_at"
+                javaType="java.time.LocalDateTime"/>
+
+        <result property="createdBy" column="created_by"/>
+        <result property="updatedBy" column="updated_by"/>
+        <result property="deletedBy" column="deleted_by"/>
+
+        <collection property="tags"
+                    ofType="com.restaurant.tag.domain.model.Tag"
+                    select="selectTagsByItemId"
+                    column="id"/>
+
+        <collection property="ingredients"
+                    ofType="com.restaurant.inventory.domain.model.Ingredient"
+                    select="selectIngredientsByItemId"
+                    column="id"/>
 
     </resultMap>
+
+    <select id="selectTagsByItemId"
+            parameterType="int"
+            resultMap="com.restaurant.tag.infrastructure.persistence.TagMapper.TagResultMap">
+        SELECT t.*
+        FROM tag t
+        JOIN item_tag it ON it.tag_id = t.id
+        WHERE it.item_id = #{itemId}
+    </select>
+
+    <select id="selectIngredientsByItemId"
+            parameterType="int"
+            resultMap="com.restaurant.inventory.infrastructure.persistence.IngredientMapper.IngredientResultMap">
+        SELECT i.*
+        FROM ingredient i
+        JOIN item_ingredient ii ON ii.ingredient_id = i.id
+        WHERE ii.item_id = #{itemId}
+    </select>
+
+    <select id="selectById" parameterType="int" resultMap="ItemResultMap">
+        SELECT * FROM item WHERE id = #{id} AND deleted_at IS NULL
+    </select>
+
+    <select id="selectAll" resultMap="ItemResultMap">
+        SELECT * FROM item ORDER BY name
+    </select>
+
+    <select id="selectAllActive" resultMap="ItemResultMap">
+        SELECT * FROM item
+        WHERE available = true AND hidden = false AND deleted_at IS NULL ORDER BY name
+    </select>
+
+    <insert id="insert"
+            parameterType="com.restaurant.item.domain.model.Item"
+            useGeneratedKeys="true"
+            keyProperty="id">
+        INSERT INTO item (
+            name, cuisine, description, short_description,
+            category, sub_category, item_type,
+            base_price, discount, on_sale, currency,
+            available, out_of_stock, seasonal,
+            image, recipe,
+            rating, rating_count, view_count, sold_count,
+            is_signature, is_featured, is_top_rated,
+            menu_id, hidden, notes,
+            created_at, created_by,
+            updated_at, updated_by
+        )
+        VALUES (
+            #{name}, #{cuisine}, #{description}, #{shortDescription},
+            #{category}, #{subCategory}, #{itemType},
+            #{basePrice}, #{discount}, #{onSale}, #{currency},
+            #{available}, #{outOfStock}, #{seasonal},
+            #{image}, #{recipe},
+            #{rating}, #{ratingCount}, #{viewCount}, #{soldCount},
+            #{isSignature}, #{isFeatured}, #{isTopRated},
+            #{menuId}, #{hidden}, #{notes},
+            #{createdAt}, #{createdBy},
+            #{updatedAt}, #{updatedBy}
+        )
+    </insert>
+
+    <update id="update"
+            parameterType="com.restaurant.item.domain.model.Item">
+        UPDATE item
+        SET name = #{name},
+            cuisine = #{cuisine},
+            description = #{description},
+            short_description = #{shortDescription},
+            category = #{category},
+            sub_category = #{subCategory},
+            item_type = #{itemType},
+            base_price = #{basePrice},
+            discount = #{discount},
+            on_sale = #{onSale},
+            currency = #{currency},
+            available = #{available},
+            out_of_stock = #{outOfStock},
+            seasonal = #{seasonal},
+            image = #{image},
+            recipe = #{recipe},
+            is_signature = #{isSignature},
+            is_featured = #{isFeatured},
+            is_top_rated = #{isTopRated},
+            menu_id = #{menuId},
+            hidden = #{hidden},
+            notes = #{notes},
+            updated_at = #{updatedAt},
+            updated_by = #{updatedBy}
+        WHERE id = #{id}
+        AND deleted_at IS NULL
+    </update>
+
+    <update id="softDelete">
+        UPDATE item
+        SET deleted_at = #{deletedAt},
+            deleted_by = #{deletedBy},
+            hidden = true,
+            available = false
+        WHERE id = #{id}
+        AND deleted_at IS NULL
+    </update>
 
 </mapper>
