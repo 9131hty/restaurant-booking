@@ -174,4 +174,40 @@
         AND deleted_at IS NULL
     </update>
 
+    <insert id="insertItemTag" parameterType="map">
+        INSERT INTO item_tag (item_id, tag_id)
+        VALUES (#{itemId}, #{tagId})
+    </insert>
+
+    <insert id="insertItemTags" parameterType="map">
+        INSERT INTO item_tag (item_id, tag_id)
+        VALUES
+        <foreach collection="tagIds" item="tagId" separator=",">
+            (#{itemId}, #{tagId})
+        </foreach>
+    </insert>
+
+
+    <insert id="insertItemIngredient" parameterType="com.restaurant.item.domain.model.ItemIngredient">
+        INSERT INTO item_ingredient (item_id, ingredient_id, quantity, unit, cost_snapshot)
+        VALUES (#{itemId}, #{ingredientId}, #{quantity}, #{unit}, #{costSnapshot})
+    </insert>
+
+    <insert id="insertItemIngredients" parameterType="map">
+        INSERT INTO item_ingredient
+        (item_id, ingredient_id, quantity, unit, cost_snapshot)
+        VALUES
+        <foreach collection="ingredients"
+                 item="ingredient"
+                 separator=",">
+            (
+            #{itemId},
+            #{ingredient.ingredientId},
+            #{ingredient.quantity},
+            #{ingredient.unit},
+            #{ingredient.costSnapshot}
+            )
+        </foreach>
+    </insert>
+
 </mapper>
