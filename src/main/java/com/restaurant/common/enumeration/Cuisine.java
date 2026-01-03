@@ -4,7 +4,7 @@ package com.restaurant.common.enumeration;
  * Represents different types of cuisines.
  * Each cuisine has a unique short code that can be used for storage or display.
  */
-public enum Cuisine {
+public enum Cuisine implements CodeEnum{
     /** Italian cuisine. */
     ITALY("IT"),
 

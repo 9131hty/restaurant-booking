@@ -1,6 +1,8 @@
 package com.restaurant.user.enumeration;
 
-public enum StaffStatus {
+import com.restaurant.common.enumeration.CodeEnum;
+
+public enum StaffStatus implements CodeEnum {
 
     WORKING("WORKING", "Currently performing assigned duties"),
     PROBATION("PROBATION", "In probation period"),

@@ -1,10 +1,12 @@
 package com.restaurant.reservation.enumeration;
 
+import com.restaurant.common.enumeration.CodeEnum;
+
 /**
  * Represents different types of tables in the restaurant.
  * Each table type has a short code for storage or display purposes.
  */
-public enum TableType {
+public enum TableType implements CodeEnum {
 
     /** VIP table. */
     VIP("VIP"),

@@ -1,10 +1,12 @@
 package com.restaurant.user.enumeration;
 
+import com.restaurant.common.enumeration.CodeEnum;
+
 /**
  * Represents different user roles in the restaurant system.
  * Each role has a short code for storage or display purposes.
  */
-public enum Role {
+public enum Role implements CodeEnum {
 
     /** Administrator role. */
     ADMIN("AD"),
