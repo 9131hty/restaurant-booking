@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS "item" (
     "out_of_stock" INTEGER DEFAULT 0,
     "seasonal" INTEGER DEFAULT 0,
     "image" TEXT,
+    "recipe" TEXT,
     "rating" REAL,
     "rating_count" INTEGER,
     "view_count" INTEGER,
