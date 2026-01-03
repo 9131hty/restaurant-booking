@@ -28,7 +28,10 @@ public class AppContextListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         try {
-            HikariDataSourceProvider.init();
+
+            String dbPath = sce.getServletContext()
+                    .getRealPath("/WEB-INF/db/restaurant.sqlite3");
+            HikariDataSourceProvider.init(dbPath);
 
             HikariDataSource dataSource = HikariDataSourceProvider.getDataSource();
             SqlSessionFactoryProvider.init(dataSource);
@@ -39,6 +42,7 @@ public class AppContextListener implements ServletContextListener {
                     .baselineOnMigrate(true)
                     .load();
 
+            flyway.repair();
             flyway.migrate();
 
         } catch (Exception e) {
