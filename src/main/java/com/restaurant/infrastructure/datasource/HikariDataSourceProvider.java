@@ -13,7 +13,7 @@ import java.util.Properties;
 /**
  * Manages a singleton HikariCP connection pool for a SQLite database.
  * <p>
- * The pool lifecycle is explicitly controlled through {@link #init()} and
+ * The pool lifecycle is explicitly controlled through {@link #init(String dbPath)} and
  * {@link #shutdown()} and is intended to be integrated with the web
  * application lifecycle.
  * </p>
@@ -32,7 +32,7 @@ public final class HikariDataSourceProvider {
      * @throws IllegalStateException if the pool is already initialized
      * @throws RuntimeException      if configuration loading or pool initialization fails
      */
-    public static synchronized void init() {
+    public static synchronized void init(String dbPath) {
         if (dataSource != null) {
             throw new IllegalStateException("HikariCP is already initialized");
         }
@@ -43,7 +43,7 @@ public final class HikariDataSourceProvider {
                     .getResourceAsStream("hikaricp/hikaricp.properties");
 
             if (in == null) {
-                throw new RuntimeException("hikaricp.properties not found in classpath");
+                throw new RuntimeException("hikaricp.properties not found");
             }
 
             props.load(in);
@@ -54,17 +54,14 @@ public final class HikariDataSourceProvider {
             long maxLifetime = Long.parseLong(props.getProperty("pool.maxLifetime", "1800000"));
             long connectionTimeout = Long.parseLong(props.getProperty("pool.connectionTimeout", "30000"));
 
-            URL dbUrl = HikariDataSourceProvider.class.getClassLoader()
-                    .getResource("restaurant.sqlite3");
-
-            if (dbUrl == null) {
-                throw new RuntimeException("restaurant.sqlite3 not found in WEB-INF/classes");
+            Path path = Path.of(dbPath).toAbsolutePath();
+            Path parent = path.getParent();
+            if (parent != null && !java.nio.file.Files.exists(parent)) {
+                java.nio.file.Files.createDirectories(parent);
             }
 
-            Path dbPath = Path.of(dbUrl.toURI());
-
             HikariConfig config = new HikariConfig();
-            config.setJdbcUrl("jdbc:sqlite:" + dbPath.toAbsolutePath());
+            config.setJdbcUrl("jdbc:sqlite:" + path);
             config.setDriverClassName("org.sqlite.JDBC");
             config.setMaximumPoolSize(maxPool);
             config.setMinimumIdle(minPool);
