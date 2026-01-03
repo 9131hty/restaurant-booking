@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,20 +61,50 @@
         <div class="menu-grid">
 
 <!-- ======= dish cards ===================================================================================================== -->
-            <article data-animate="" id="ietzi7" class="group cjiayo-t-border dish-card">
-                <div id="iy7383" class="dish-image-wrapper"><img
-                        src=""
-                        alt="Heirloom Tomato Bruschetta" id="ijtmtc" class="group-hover:scale-[1.03] dish-image" /><span
-                        class="dish-tag">Starter • V</span></div>
-                <div class="dish-content">
-                    <div class="dish-header">
-                        <h3 id="is4flyg" class="cjiayo-t-h2 dish-title">Heirloom Tomato Bruschetta</h3><span
-                            class="dish-price">$9</span>
+            <c:forEach var="item" items="${items}">
+                <article class="group cjiayo-t-border dish-card">
+                    <div class="dish-image-wrapper">
+                        <img
+                                src="${meresc}${item.image}"
+                                alt="${item.name}"
+                                class="group-hover:scale-[1.03] dish-image" />
+
+                        <!-- TAG -->
+                        <c:if test="${not empty item.tags}">
+                <span class="dish-tag">
+                    <c:forEach var="tag" items="${item.tags}" varStatus="s">
+                        ${tag.name}<c:if test="${!s.last}"> • </c:if>
+                    </c:forEach>
+                </span>
+                        </c:if>
                     </div>
-                    <p class="dish-description">Grilled sourdough, basil oil, balsamic pearls, garlic confit, and marinated
-                        heirloom tomatoes.</p>
-                </div>
-            </article>
+
+                    <div class="dish-content">
+                        <div class="dish-header">
+                            <h3 class="cjiayo-t-h2 dish-title">
+                                    ${item.name}
+                            </h3>
+
+                            <span class="dish-price">
+                    <fmt:formatNumber value="${item.basePrice}"
+                                      type="currency"
+                                      currencyCode="${item.currency}" />
+                </span>
+                        </div>
+
+                        <p class="dish-description">
+                            <c:choose>
+                                <c:when test="${not empty item.shortDescription}">
+                                    ${item.shortDescription}
+                                </c:when>
+                                <c:otherwise>
+                                    ${item.description}
+                                </c:otherwise>
+                            </c:choose>
+                        </p>
+                    </div>
+                </article>
+            </c:forEach>
 <!-- ======================================================================================================================= -->
 
         </div>

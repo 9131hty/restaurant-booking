@@ -44,7 +44,7 @@ public class ItemService {
      *
      * @return a list of items
      */
-    public List<Item> getAll() {
+    public List<Item> all() {
         return repository.all();
     }
 

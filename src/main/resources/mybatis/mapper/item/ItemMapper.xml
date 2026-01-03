@@ -78,7 +78,7 @@
         SELECT t.*
         FROM tag t
         JOIN item_tag it ON it.tag_id = t.id
-        WHERE it.item_id = #{itemId}
+        WHERE it.item_id = #{value}
     </select>
 
     <select id="selectIngredientsByItemId"
@@ -87,7 +87,7 @@
         SELECT i.*
         FROM ingredient i
         JOIN item_ingredient ii ON ii.ingredient_id = i.id
-        WHERE ii.item_id = #{itemId}
+        WHERE ii.item_id = #{value}
     </select>
 
     <select id="selectById" parameterType="int" resultMap="ItemResultMap">
@@ -100,7 +100,7 @@
 
     <select id="selectAllActive" resultMap="ItemResultMap">
         SELECT * FROM item
-        WHERE available = true AND hidden = false AND deleted_at IS NULL ORDER BY name
+        WHERE available = 1 AND hidden = 0 AND deleted_at IS NULL ORDER BY name
     </select>
 
     <insert id="insert"
@@ -168,8 +168,8 @@
         UPDATE item
         SET deleted_at = #{deletedAt},
             deleted_by = #{deletedBy},
-            hidden = true,
-            available = false
+            hidden = 1,
+            available = 0
         WHERE id = #{id}
         AND deleted_at IS NULL
     </update>
