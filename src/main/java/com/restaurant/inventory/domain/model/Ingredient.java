@@ -20,6 +20,9 @@ public class Ingredient {
     /** Ingredient name (e.g., Sugar, Milk, Beef). */
     private String name;
 
+    /** File name of the image */
+    private String image;
+
     /** Base unit used for inventory tracking (e.g., g, ml, piece). */
     private MeasurementUnit measurementUnit;
 

@@ -25,5 +25,7 @@ public enum IngredientCategory {
     CANNED,
     PRESERVED,
     ADDITIVE,
+    SEASONING,
+    FAT,
     OTHER
 }

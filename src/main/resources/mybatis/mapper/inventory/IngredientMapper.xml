@@ -7,6 +7,7 @@
         <id property="id" column="id" />
 
         <result property="name" column="name" />
+        <result property="image" column="image" />
 
         <result property="measurementUnit"
             column="measurement_unit"
@@ -77,17 +78,18 @@
     </update>
 
     <insert id="insert" parameterType="com.restaurant.inventory.domain.model.Ingredient" useGeneratedKeys="true" keyProperty="id"> 
-        INSERT INTO ingredient (name, measurement_unit, cost_per_unit, stock_quantity, 
+        INSERT INTO ingredient (name, image, measurement_unit, cost_per_unit, stock_quantity,
                                 min_stock_quantity, category, allergen, description, status,
                                 created_at, updated_at) 
-        VALUES (#{name}, #{measurementUnit}, #{costPerUnit}, #{stockQuantity},
+        VALUES (#{name}, #{image}, #{measurementUnit}, #{costPerUnit}, #{stockQuantity},
                 #{minStockQuantity}, #{category}, #{allergen}, #{description}, 
                 #{status}, #{createdAt}, #{updatedAt}) 
     </insert>
 
     <update id="update" parameterType="com.restaurant.inventory.domain.model.Ingredient"> 
         UPDATE ingredient 
-        SET name = #{name}, 
+        SET name = #{name},
+            image = #{image},
             measurement_unit = #{measurementUnit}, 
             cost_per_unit = #{costPerUnit},
             min_stock_quantity = #{minStockQuantity}, 
