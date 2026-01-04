@@ -25372,11 +25372,11 @@ summary {
 }
 
 .dish-header-section {
-    margin-top: 1.5rem;
-    display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    /*margin-top: 1.5rem;*/
+    display: flex;
+    /*grid-template-columns: repeat(12, minmax(0, 1fr));*/
     gap: 1.5rem;
-    align-items: flex-start;
+    /*align-items: flex-start;*/
 }
 
 .dish-media-column {
@@ -25613,7 +25613,12 @@ summary {
     border-width: 1px;
     border-color: rgba(228, 216, 200, 0.9);
     background-color: rgb(255 253 248 / 1);
-    padding: 1rem;
+    padding: 2rem;
+
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+    /*align-items: center;*/
+    /*text-align: center;*/
 }
 
 .facts-title {
@@ -25622,9 +25627,13 @@ summary {
 }
 
 .facts-list {
-    display: grid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    /*padding: 0 2rem;*/
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.75rem;
+    gap: 2rem;
     color: rgba(59, 47, 47, 0.9);
 }
 
