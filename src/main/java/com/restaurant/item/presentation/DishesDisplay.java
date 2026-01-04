@@ -15,8 +15,8 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ItemPresentation", value = "/dishes")
-public class ItemPresentation extends HttpServlet {
+@WebServlet(name = "DishesDisplay", value = "/dishes")
+public class DishesDisplay extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private ItemService itemService;
 
