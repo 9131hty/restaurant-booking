@@ -56,6 +56,7 @@ CREATE TABLE IF NOT EXISTS "menu_tag" (
 CREATE TABLE IF NOT EXISTS "ingredient" (
     "id" INTEGER PRIMARY KEY NOT NULL,
     "name" TEXT NOT NULL,
+    "image" TEXT,
     "measurement_unit" TEXT NOT NULL,
     "cost_per_unit" REAL NOT NULL,
     "stock_quantity" INTEGER DEFAULT 0,
