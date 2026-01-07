@@ -11,11 +11,12 @@ public class ItemTranslator {
         Overview translation = new Overview();
         translation.setId(item.getId());
         translation.setName(item.getName());
+        translation.setImage(item.getImage());
         translation.setCategory(item.getCategory());
         translation.setSubCategory(item.getSubCategory());
         translation.setShortDescription(item.getShortDescription());
         translation.setPrice(item.getBasePrice());
-        translation.setImage(item.getImage());
+        translation.setCurrency(item.getCurrency());
         return translation;
     }
 
