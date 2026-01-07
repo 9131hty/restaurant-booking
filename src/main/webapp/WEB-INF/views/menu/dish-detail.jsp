@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,18 +34,18 @@
                 <div id="i14si51" class="breadcrumbs"><a href="home"
                                                          class="cjiayo-t-link breadcrumb-link">Home</a><span class="breadcrumb-divider">/</span><span
                         class="breadcrumb-current">Dish Detail</span></div>
-                <div class="breadcrumb-right"><span class="dish-id-label">Dish ID: SD-1042</span></div>
+                <div class="breadcrumb-right"><span class="dish-id-label">Dish ID: ${detailed.id}</span></div>
             </div>
         </div>
     </div>
 </section>
 <main class="main-content">
     <div id="iun4jztk-2" class="dish-media-card">
-        <img src="${gcv}images/dish-detail/dish.jpg"
+        <img src="${item_img}${detailed.image}"
              alt="Dish photo" id="iqp1wu6w-2" class="dish-main-image" />
         <div id="ise9spby-2" class="media-overlay-bar">
-            <div id="i9x5s5sa-2" class="media-badges"><span id="i5gn2d54-2" class="category-badge">Italian</span><span
-                    id="i0lhb5al-2" class="subcategory-badge">Pasta</span></div>
+            <div id="i9x5s5sa-2" class="media-badges"><span id="i5gn2d54-2" class="category-badge">${detailed.category}</span><span
+                    id="i0lhb5al-2" class="subcategory-badge">${detailed.subCategory}</span></div>
             <div id="iioukkte-2" class="rating-inline"><img
                     src="${gcv}icons/dish-detail/star.svg" alt="Star" id="i0rpwduq-2"
                     class="star-icon-1" /><img src="${gcv}icons/dish-detail/star.svg" alt="Star"
@@ -61,34 +62,35 @@
         <%--        </div>--%>
         <div id="idcyi5pr-2" class="dish-details-column">
             <div id="i2iuqami-2" class="dish-title-block">
-                <h1 id="ixj813vh-2" class="cjiayo-t-h1 dish-title">Truffle Tagliatelle with Parmesan Cream</h1>
-                <div id="ivsmy1ef-2" class="dish-meta-row majestic-fade"><span id="i88ddprn" class="meta-prep-time"><img
-                        src="${gcv}icons/dish-detail/timer.svg" alt="" id="iam4y2ij"
-                        class="timer-icon" /> 25–30 min
-            </span><span id="ibixrju5" class="meta-servings"><img
-                        src="${gcv}icons/dish-detail/users.svg" alt="" id="ir3vsjyj"
-                        class="users-icon" /> Serves 2
-            </span><span id="iooblsix" class="meta-difficulty"><img
-                        src="${gcv}icons/dish-detail/gauge.svg" alt="" id="iypalxbt"
-                        class="scale-icon" /> Easy
-            </span></div>
+                <h1 id="ixj813vh-2" class="cjiayo-t-h1 dish-title">${detailed.name}</h1>
+<%--                <div id="ivsmy1ef-2" class="dish-meta-row majestic-fade"><span id="i88ddprn" class="meta-prep-time"><img--%>
+<%--                        src="${gcv}icons/dish-detail/timer.svg" alt="" id="iam4y2ij"--%>
+<%--                        class="timer-icon" /> 25–30 min--%>
+<%--            </span><span id="ibixrju5" class="meta-servings"><img--%>
+<%--                        src="${gcv}icons/dish-detail/users.svg" alt="" id="ir3vsjyj"--%>
+<%--                        class="users-icon" /> Serves 2--%>
+<%--            </span><span id="iooblsix" class="meta-difficulty"><img--%>
+<%--                        src="${gcv}icons/dish-detail/gauge.svg" alt="" id="iypalxbt"--%>
+<%--                        class="scale-icon" /> Easy--%>
+<%--            </span></div>--%>
             </div>
             <p id="iajnlo5o" class="dish-description majestic-fade">
-                Silky fresh tagliatelle tossed in a delicate parmesan cream, finished with fragrant truffle oil and a shower
-                of shaved pecorino. A comforting yet elegant bowl with layered umami and a touch of earthiness.
+                ${detailed.description}
             </p>
+        </div>
             <div id="iwamjntw" class="actions-row majestic-fade"><button type="button" aria-pressed="false" id="ifs4hwqs"
                                                                          aria-label="Save Truffle Tagliatelle with Parmesan Cream to favorites"
                                                                          class="cjiayo-t-button favorite-button"><img src="${gcv}icons/dish-detail/heart.svg"
                                                                                                                       alt="" id="i7gmclbe" class="heart-icon" /><span id="ib8rtauw">Save to Favorites</span></button><a
-                    download="Truffle-Tagliatelle-Recipe.txt"
-                    href="data:text/plain;charset=utf-8,Truffle%20Tagliatelle%20with%20Parmesan%20Cream%0A%0ACategory%3A%20Italian%20%3E%20Pasta%0APrep%20Time%3A%2025-30%20min%0AServes%3A%202%0A%0AIngredients%3A%0A-%20200g%20fresh%20tagliatelle%0A-%20150ml%20heavy%20cream%0A-%2050g%20parmesan%2C%20finely%20grated%0A-%201%20tbsp%20butter%0A-%201%20tbsp%20truffle%20oil%0A-%20Salt%20%26%20black%20pepper%0A- %20Pecorino%20to%20finish%0A%0AInstructions%3A%0A1.%20Cook%20tagliatelle%20until%20al%20dente.%0A2.%20Warm%20cream%20%2B%20butter%2C%20stir%20in%20parmesan.%0A3.%20Toss%20pasta%20with%20sauce%2C%20add%20truffle%20oil%2C%20season.%0A4.%20Finish%20with%20pecorino%20and%20serve."
+                    download="${detailed.recipe}"
+                    href="${item_recipe}${detailed.recipe}"
                     id="ifj3mask" class="cjiayo-t-button download-button"><img
                     src="${gcv}icons/dish-detail/download.svg" alt="" id="i0u3d7ws"
-                    class="download-icon" /><span id="igk1p10x">Download Recipe</span></a><a href="./dishes.html"
+                    class="download-icon" /><span id="igk1p10x">Download Recipe</span></a><a href="javascript:void(0);" onclick="history.back()"
                                                                                              id="iiarhp8d" class="back-to-dishes"><img
                     src="${gcv}icons/dish-detail/chevrons-left.svg" alt="" id="ikwzlsfu"
                     class="back-icon" /><span id="ifxbjkz6">Browse all dishes</span></a></div>
+    </section>
             <div class="key-facts-card">
                 <h3 class="cjiayo-t-h2 facts-title">At a glance</h3>
                 <ul class="facts-list">
@@ -106,18 +108,27 @@
                     </li>
                 </ul>
             </div>
-        </div>
-    </section>
     <section id="i9w3h6mn" class="details-section">
         <div id="imn9i9nh" class="ingredients-card">
             <h3 class="cjiayo-t-h2 ingredients-title">Ingredients</h3>
             <ul id="irs3xu6i" class="ingredients-list">
 
                 <!-- =========== ingredient ================================================================================================ -->
-                <li id="ix929ap8" class="ingredient-item"><img src="${gcv}icons/dish-detail/dot.svg"
-                                                               alt="" id="i4mm371l" class="dot-icon-1" /><img loading="lazy" alt="Fresh tagliatelle"
-                                                                                                              src="https://vi.wikipedia.org/wiki/T%E1%BA%ADp_tin:All-Purpose_Flour_(4107895947).jpg"
-                                                                                                              class="ingredient-thumb" /><span>200g fresh tagliatelle</span></li>
+                    <c:forEach var="ingredient" items="${detailed.ingredients}">
+                        <li class="ingredient-item">
+                            <img src="${gcv}icons/dish-detail/dot.svg"
+                                 alt=""
+                                 class="dot-icon-1" />
+                            <img loading="lazy"
+                                 alt="${ingredient.name}"
+                                 src="${inv_img}${ingredient.image}"
+                                 class="ingredient-thumb" />
+                            <span>
+<%--                            ${ingredient.stockQuantity}${ingredient.measurementUnit.label}--%>
+                                ${ingredient.name}
+                            </span>
+                        </li>
+                    </c:forEach>
                 <!-- ======================================================================================================================= -->
 
             </ul>

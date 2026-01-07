@@ -62,21 +62,20 @@
 
 <!-- ======= dish cards ===================================================================================================== -->
             <c:forEach var="item" items="${items}">
+            <a href="dish-detail?id=${item.id}" class="group cjiayo-t-border dish-card block">
                 <article class="group cjiayo-t-border dish-card">
                     <div class="dish-image-wrapper">
                         <img
-                                src="${meresc}${item.image}"
+                                src="${item_img}${item.image}"
                                 alt="${item.name}"
                                 class="group-hover:scale-[1.03] dish-image" />
 
-                        <!-- TAG -->
-                        <c:if test="${not empty item.tags}">
-                <span class="dish-tag">
-                    <c:forEach var="tag" items="${item.tags}" varStatus="s">
-                        ${tag.name}<c:if test="${!s.last}"> • </c:if>
-                    </c:forEach>
-                </span>
-                        </c:if>
+                                <!-- TAG -->
+                                <c:if test="${not empty item.category}">
+                        <span class="dish-tag">
+                                ${item.category}
+                        </span>
+                                </c:if>
                     </div>
 
                     <div class="dish-content">
@@ -86,7 +85,7 @@
                             </h3>
 
                             <span class="dish-price">
-                    <fmt:formatNumber value="${item.basePrice}"
+                    <fmt:formatNumber value="${item.price}"
                                       type="currency"
                                       currencyCode="${item.currency}" />
                 </span>
@@ -104,6 +103,7 @@
                         </p>
                     </div>
                 </article>
+            </a>
             </c:forEach>
 <!-- ======================================================================================================================= -->
 
