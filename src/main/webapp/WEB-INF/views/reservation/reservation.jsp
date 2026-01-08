@@ -59,11 +59,11 @@
                         <div class="card-top-row"><span class="table-number">Table #3</span><span class="location-tag">Window
                   Side</span></div>
                         <p class="capacity">Capacity: 2–4 guests</p>
-                        <p class="card-description">Cozy nook with evening glow, perfect for intimate dining.</p><button
-                            type="button" class="cjiayo-t-button view-details-button"><img
-                            src="${gcv}icons/reservation/eye.svg" alt="" class="button-icon" />
-                        View Details
-                    </button>
+                        <p class="card-description">Cozy nook with evening glow, perfect for intimate dining.</p>
+                        <a href="table-detail" class="cjiayo-t-button view-details-button">
+                            <img src="${gcv}icons/reservation/eye.svg" alt="" class="button-icon" />
+                            View Details
+                        </a>
                     </div>
                 </article>
 <!-- ======================================================================================================================= -->
