@@ -18,10 +18,10 @@
             <a href="reviews" class="cjiayo-t-link navbar-link" id="ib5j3">
                 Reviews</a>
             <div class="navbar-auth" id="i34gb">
-                <a href="sign-in" class="cjiayo-t-button navbar-cta" id="i9x65">
+                <a href="login" class="cjiayo-t-button navbar-cta" id="i9x65">
                     <img src="${gcv}icons/common/log-in.svg" alt="" class="hero-icon"/>
                     Login</a>
-                <a href="sign-up" class="cjiayo-t-button navbar-cta" id="i09yc">
+                <a href="register" class="cjiayo-t-button navbar-cta" id="i09yc">
                     <img src="${gcv}icons/common/user-round-plus.svg" alt="" class="hero-icon"/>
                     Register</a>
             </div>
