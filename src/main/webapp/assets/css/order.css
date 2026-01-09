@@ -1,49 +1,119 @@
-.sparkle-dot {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    border-radius: 9999px;
-    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 70%);
-    filter: saturate(1.15) drop-shadow(0 0 6px rgba(255, 255, 255, 0.55));
-    opacity: 0;
-    pointer-events: none;
-    animation: sparkTwinkle 1.9s ease-in-out infinite;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.45), 0 0 14px rgba(193, 154, 107, 0.28);
-    transform: translate(-50%, -50%) scale(0.9);
-    will-change: transform, opacity, filter;
-    transition: opacity 200ms ease;
+.dish-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.dish-card > * {
+    position: relative;
     z-index: 1;
 }
 
-.dish-card:hover .sparkle-dot {
-    opacity: 0.85;
-    animation: sparkTwinkleSoft var(--twinkle, 1400ms) ease-in-out infinite,
-    sparkDrift var(--drift, 7s) linear infinite;
+/*.card-media img {*/
+/*    width: 100%;*/
+/*    display: block;*/
+/*    position: relative;*/
+/*    z-index: 1;*/
+/*}*/
+
+.dish-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 12rem;
+    overflow: hidden;
 }
 
-.dish-card:hover .sparkle-dot.s-low {
-    animation-duration: 1600ms;
+.dish-image-wrapper img {
+    position: relative;
+    z-index: 1;
 }
 
-.dish-card:hover .sparkle-dot.s-mid {
-    animation-duration: 1400ms;
+.dish-image-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: -60%;
+    z-index: 2;
+
+    background: linear-gradient(
+            120deg,
+            rgba(255,255,255,0) 0%,
+            rgba(255,255,255,0.18) 46%,
+            rgba(255,255,255,0.38) 50%,
+            rgba(255,255,255,0.18) 54%,
+            rgba(255,255,255,0) 100%
+    );
+
+    transform: translateX(-140%) skewX(-20deg);
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    filter: blur(7px) brightness(1.3);
 }
 
-.dish-card:hover .sparkle-dot.s-high {
-    animation-duration: 1200ms;
+.dish-image-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: -60%;
+    z-index: 2;
+
+    background: linear-gradient(
+            120deg,
+            rgba(255,255,255,0) 0%,
+            rgba(255,255,255,0.2) 45%,
+            rgba(255,255,255,0.45) 50%,
+            rgba(255,255,255,0.2) 55%,
+            rgba(255,255,255,0) 100%
+    );
+
+    transform: translateX(-120%) skewX(-20deg);
+    opacity: 1;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    filter: blur(6px) brightness(1.6);
 }
 
-.sparkle-dot.s-low {
-    --twinkle: 1600ms;
-    --drift: 8s;
+.dish-card .dish-image-wrapper::before,
+.dish-card .dish-image-wrapper::after {
+    animation: none;
 }
 
-.sparkle-dot.s-mid {
-    --twinkle: 1400ms;
-    --drift: 7s;
+.dish-card:hover .dish-image-wrapper::after {
+    animation: cardLightSweepMain 4.8s cubic-bezier(.22,.61,.36,1) infinite;
 }
 
-.sparkle-dot.s-high {
-    --twinkle: 1200ms;
-    --drift: 6s;
+.dish-card:hover .dish-image-wrapper::before {
+    animation: cardLightSweepAlt 4.2s cubic-bezier(.4,0,.2,1) infinite;
+    animation-delay: -1.3s;
+}
+
+@keyframes cardLightSweepMain {
+    0% {
+        transform: translateX(-120%) skewX(-20deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        transform: translateX(120%) skewX(-20deg);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes cardLightSweepAlt {
+    0% {
+        transform: translateX(-140%) skewX(-20deg);
+        opacity: 0;
+    }
+    18% {
+        opacity: 1;
+    }
+    82% {
+        transform: translateX(120%) skewX(-20deg);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }

@@ -21,4 +21,6 @@ public class MenuCard {
     private double basePrice;
     private double discount;
     private List<Tag> tags;
+    private String image;
+    private String icon;
 }

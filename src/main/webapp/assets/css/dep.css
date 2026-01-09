@@ -1,0 +1,83 @@
+/*.sparkle-dot {*/
+/*    position: absolute;*/
+/*    width: 6px;*/
+/*    height: 6px;*/
+/*    border-radius: 9999px;*/
+
+/*    background: radial-gradient(*/
+/*            circle at 50% 50%,*/
+/*            rgba(255,255,255,0.9),*/
+/*            rgba(255,255,255,0.4) 40%,*/
+/*            rgba(255,255,255,0) 75%*/
+/*    );*/
+
+/*    opacity: 0;*/
+/*    transform: translate(-50%, -50%) scale(0.6);*/
+
+/*    filter:*/
+/*            brightness(calc(1.1 + 0.6 * var(--spark-energy, 0)))*/
+/*            saturate(calc(1.1 + 0.4 * var(--spark-energy, 0)));*/
+
+/*    box-shadow:*/
+/*            0 0 6px rgba(255,255,255,0.35),*/
+/*            0 0 10px rgba(193,154,107,0.22);*/
+
+/*    pointer-events: none;*/
+/*    will-change: transform, opacity, filter;*/
+
+/*    animation:*/
+/*            sparkTwinkleSoft var(--twinkle, 1400ms) ease-in-out infinite,*/
+/*            sparkDrift var(--drift, 7s) linear infinite;*/
+
+/*    transition:*/
+/*            opacity 300ms ease,*/
+/*            transform 450ms cubic-bezier(.22,.61,.36,1),*/
+/*            filter 450ms cubic-bezier(.22,.61,.36,1);*/
+/*}*/
+
+/*.dish-card:hover {*/
+/*    --spark-energy: 1;*/
+/*}*/
+
+/*.dish-card:hover .sparkle-dot {*/
+/*    opacity: 1;*/
+
+/*    transform: translate(-50%, -50%) scale(1);*/
+
+/*    filter:*/
+/*            brightness(1.65)*/
+/*            saturate(1.45)*/
+/*            drop-shadow(0 0 12px rgba(255,255,255,0.85));*/
+
+/*    box-shadow:*/
+/*            0 0 14px rgba(255,255,255,0.75),*/
+/*            0 0 24px rgba(193,154,107,0.45);*/
+/*    animation-play-state: running;*/
+/*}*/
+
+/*.dish-card:hover .sparkle-dot.s-low {*/
+/*    animation-duration: 1600ms;*/
+/*}*/
+
+/*.dish-card:hover .sparkle-dot.s-mid {*/
+/*    animation-duration: 1400ms;*/
+/*}*/
+
+/*.dish-card:hover .sparkle-dot.s-high {*/
+/*    animation-duration: 1200ms;*/
+/*}*/
+
+/*.sparkle-dot.s-low {*/
+/*    --twinkle: 1600ms;*/
+/*    --drift: 8s;*/
+/*}*/
+
+/*.sparkle-dot.s-mid {*/
+/*    --twinkle: 1400ms;*/
+/*    --drift: 7s;*/
+/*}*/
+
+/*.sparkle-dot.s-high {*/
+/*    --twinkle: 1200ms;*/
+/*    --drift: 6s;*/
+/*}*/

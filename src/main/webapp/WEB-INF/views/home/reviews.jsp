@@ -42,7 +42,7 @@
     </div>
 </section>
 <main class="main-content">
-    <div class="breadcrumbs"><a href="./homehtml" class="cjiayo-t-link breadcrumb-link">Home</a><span
+    <div class="breadcrumbs"><a href="home" class="cjiayo-t-link breadcrumb-link">Home</a><span
             class="breadcrumb-divider">/</span><span>Feedback &amp; Reviews</span></div>
     <section class="guidelines-section">
         <div class="cjiayo-t-border guidelines-card"><img alt="Info"
@@ -152,7 +152,7 @@
                         Creamy and aromatic, the truffle notes were perfectly balanced. Service was attentive and warm. Would
                         order again.
                     </p>
-                    <div class="review-actions"><a href="./menuhtml" class="cjiayo-t-link reorder-link"><img
+                    <div class="review-actions"><a href="dishes" class="cjiayo-t-link reorder-link"><img
                             alt="Reorder" src="${gcv}icons/reviews/rotate-ccw.svg"
                             class="reorder-icon" />
                         Re-order

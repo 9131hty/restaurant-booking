@@ -20442,13 +20442,6 @@ body.cjiayo-t-body {
     gap: 1.5rem;
 }
 
-.dish-image-wrapper {
-    position: relative;
-    width: 100%;
-    height: 12rem;
-    overflow: hidden;
-}
-
 .dish-tag {
     position: absolute;
     top: 0.75rem;
@@ -24511,23 +24504,6 @@ body {
     animation: goldenSweep 3.4s ease-in-out infinite;
 }
 
-.sparkle-dot {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    border-radius: 9999px;
-    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 70%);
-    filter: saturate(1.15) drop-shadow(0 0 6px rgba(255, 255, 255, 0.55));
-    opacity: 0;
-    pointer-events: none;
-    animation: sparkTwinkle 1.9s ease-in-out infinite;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.45), 0 0 14px rgba(193, 154, 107, 0.28);
-    transform: translate(-50%, -50%) scale(0.9);
-    will-change: transform, opacity, filter;
-    transition: opacity 200ms ease;
-    z-index: 1;
-}
-
 .orbit-stars {
     position: absolute;
     inset: -18px;
@@ -24790,39 +24766,6 @@ body {
     margin-right: 0px;
     margin-bottom: 0px;
     margin-left: 0px;
-}
-
-.dish-card:hover .sparkle-dot {
-    opacity: 0.85;
-    animation: sparkTwinkleSoft var(--twinkle, 1400ms) ease-in-out infinite,
-    sparkDrift var(--drift, 7s) linear infinite;
-}
-
-.dish-card:hover .sparkle-dot.s-low {
-    animation-duration: 1600ms;
-}
-
-.dish-card:hover .sparkle-dot.s-mid {
-    animation-duration: 1400ms;
-}
-
-.dish-card:hover .sparkle-dot.s-high {
-    animation-duration: 1200ms;
-}
-
-.sparkle-dot.s-low {
-    --twinkle: 1600ms;
-    --drift: 8s;
-}
-
-.sparkle-dot.s-mid {
-    --twinkle: 1400ms;
-    --drift: 7s;
-}
-
-.sparkle-dot.s-high {
-    --twinkle: 1200ms;
-    --drift: 6s;
 }
 
 #im690b {
@@ -26143,56 +26086,6 @@ summary {
     margin-bottom: 0px;
 }
 
-.sparkle-dot {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    border-radius: 9999px;
-    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 70%);
-    filter: saturate(1.15) drop-shadow(0 0 6px rgba(255, 255, 255, 0.55));
-    opacity: 0;
-    pointer-events: none;
-    animation: sparkTwinkle 1.9s ease-in-out infinite;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.45), 0 0 14px rgba(193, 154, 107, 0.28);
-    transform: translate(-50%, -50%) scale(0.9);
-    will-change: transform, opacity, filter;
-    transition: opacity 200ms ease;
-    z-index: 1;
-}
-
-.dish-card:hover .sparkle-dot {
-    opacity: 0.85;
-    animation: sparkTwinkleSoft var(--twinkle, 1400ms) ease-in-out infinite,
-    sparkDrift var(--drift, 7s) linear infinite;
-}
-
-.dish-card:hover .sparkle-dot.s-low {
-    animation-duration: 1600ms;
-}
-
-.dish-card:hover .sparkle-dot.s-mid {
-    animation-duration: 1400ms;
-}
-
-.dish-card:hover .sparkle-dot.s-high {
-    animation-duration: 1200ms;
-}
-
-.sparkle-dot.s-low {
-    --twinkle: 1600ms;
-    --drift: 8s;
-}
-
-.sparkle-dot.s-mid {
-    --twinkle: 1400ms;
-    --drift: 7s;
-}
-
-.sparkle-dot.s-high {
-    --twinkle: 1200ms;
-    --drift: 6s;
-}
-
 @keyframes btnGlow {
 
     0%,
@@ -26237,10 +26130,10 @@ summary {
 
 @media (prefers-reduced-motion: reduce) {
 
-    .sparkle-dot {
-        animation: none !important;
-        opacity: 0 !important;
-    }
+    /*.sparkle-dot {*/
+    /*    animation: none !important;*/
+    /*    opacity: 0 !important;*/
+    /*}*/
 
     #isbykkf {
         animation: none !important;
@@ -26305,10 +26198,10 @@ summary {
         animation: none !important;
     }
 
-    .sparkle-dot {
-        animation: none !important;
-        opacity: 0 !important;
-    }
+    /*.sparkle-dot {*/
+    /*    animation: none !important;*/
+    /*    opacity: 0 !important;*/
+    /*}*/
 
     .orbit-star {
         animation: none;
@@ -26631,12 +26524,12 @@ summary {
 
 @media (max-width: 992px) {
 
-    .dish-card:hover .sparkle-dot {
-        animation-duration: 1300ms;
-        opacity: 0.8;
-        animation: sparkTwinkleSoft var(--twinkle, 1300ms) ease-in-out infinite,
-        sparkDrift var(--drift, 7s) linear infinite;
-    }
+    /*.dish-card:hover .sparkle-dot {*/
+    /*    animation-duration: 1300ms;*/
+    /*    opacity: 0.8;*/
+    /*    animation: sparkTwinkleSoft var(--twinkle, 1300ms) ease-in-out infinite,*/
+    /*    sparkDrift var(--drift, 7s) linear infinite;*/
+    /*}*/
 
     .hero-container {
         padding-top: 2.5rem;
@@ -27394,12 +27287,12 @@ summary {
         animation-delay: 0.7s;
     }
 
-    .dish-card:hover .sparkle-dot {
-        animation-duration: 1300ms;
-        opacity: 0.8;
-        animation: sparkTwinkleSoft var(--twinkle, 1300ms) ease-in-out infinite,
-        sparkDrift var(--drift, 7s) linear infinite;
-    }
+    /*.dish-card:hover .sparkle-dot {*/
+    /*    animation-duration: 1300ms;*/
+    /*    opacity: 0.8;*/
+    /*    animation: sparkTwinkleSoft var(--twinkle, 1300ms) ease-in-out infinite,*/
+    /*    sparkDrift var(--drift, 7s) linear infinite;*/
+    /*}*/
 
     .dish-media-column {
         grid-column: span 12 / span 12;
@@ -27444,17 +27337,17 @@ summary {
 
 @media (max-width: 480px) {
 
-    .sparkle-dot {
-        width: 5px;
-        height: 5px;
-    }
+    /*.sparkle-dot {*/
+    /*    width: 5px;*/
+    /*    height: 5px;*/
+    /*}*/
 
-    .dish-card:hover .sparkle-dot {
-        animation-duration: 1200ms;
-        opacity: 0.8;
-        animation: sparkTwinkleSoft var(--twinkle, 1200ms) ease-in-out infinite,
-        sparkDrift var(--drift, 6.5s) linear infinite;
-    }
+    /*.dish-card:hover .sparkle-dot {*/
+    /*    animation-duration: 1200ms;*/
+    /*    opacity: 0.8;*/
+    /*    animation: sparkTwinkleSoft var(--twinkle, 1200ms) ease-in-out infinite,*/
+    /*    sparkDrift var(--drift, 6.5s) linear infinite;*/
+    /*}*/
 
     .brand-title {
         font-size: 1.125rem;
@@ -27893,10 +27786,10 @@ summary {
         height: 5px;
     }
 
-    .sparkle-dot {
-        width: 5px;
-        height: 5px;
-    }
+    /*.sparkle-dot {*/
+    /*    width: 5px;*/
+    /*    height: 5px;*/
+    /*}*/
 
     .orbit-stars {
         inset: -14px;
@@ -27915,12 +27808,12 @@ summary {
         animation-delay: 0.6s;
     }
 
-    .dish-card:hover .sparkle-dot {
-        animation-duration: 1200ms;
-        opacity: 0.8;
-        animation: sparkTwinkleSoft var(--twinkle, 1200ms) ease-in-out infinite,
-        sparkDrift var(--drift, 6.5s) linear infinite;
-    }
+    /*.dish-card:hover .sparkle-dot {*/
+    /*    animation-duration: 1200ms;*/
+    /*    opacity: 0.8;*/
+    /*    animation: sparkTwinkleSoft var(--twinkle, 1200ms) ease-in-out infinite,*/
+    /*    sparkDrift var(--drift, 6.5s) linear infinite;*/
+    /*}*/
 
     .facts-list {
         grid-template-columns: repeat(1, minmax(0, 1fr));

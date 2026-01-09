@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,8 +60,19 @@
                                                                                          class="subtotal-value">$0.00</span></div>
         <div class="cart-total-row"><span class="total-label">Total</span><span id="cartTotal"
                                                                                 class="total-value">$0.00</span></div>
-        <div class="cart-actions"><button type="button" id="clearCart" class="clear-cart-button">Clear</button><a
-                href="checkout" class="cjiayo-t-button checkout-button">Checkout</a></div>
+        <div class="cart-actions"><button type="button" id="clearCart" class="clear-cart-button">Clear</button>
+            <form id="checkoutForm"
+                  action="checkout"
+                  method="post">
+
+                <input type="hidden" name="cartData" id="cartDataInput">
+
+                <button type="submit"
+                        class="cjiayo-t-button checkout-button">
+                    Checkout
+                </button>
+            </form>
+        </div>
     </div>
 </aside>
 <main id="iz74m1" class="main-content">
@@ -80,24 +93,50 @@
         <div id="itemsGrid" class="items-grid">
 
 <!-- ======= dish card ===================================================================================================== -->
-            <article data-id="1" data-name="Truffle Mushroom Pasta" data-price="16.5" data-category="mains" id="i4zpit"
-                     class="group dish-card">
-                <div class="dish-image-wrapper"><img
-                        src="https://sih.booky.ph/eyJrZXkiOiJibG9nXC93cC1jb250ZW50XC91cGxvYWRzXC8yMDIzXC8wNVwvMjUwOTA3MTlcL3Bpenp1bHUtMS5qcGciLCJidWNrZXQiOiJib29reXJlcG9ydCIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb3ZlciIsIndpZHRoIjoiNzcwIn19fQ=="
-                        alt="Truffle Mushroom Pasta" loading="eager" id="iib4sbv" class="dish-image" /></div>
-                <div id="iginhop" class="dish-content">
-                    <div class="dish-header">
-                        <h3 id="im690b" class="dish-name">Truffle Mushroom Pasta</h3><span class="dish-price">$16.50</span>
+            <c:forEach var="card" items="${cards}">
+                <article
+                        data-id="${card.id}"
+                        data-name="${card.name}"
+                        data-price="${card.basePrice}"
+                        data-category="${card.category}"
+                        class="group dish-card"
+                        id="card-${card.id}">
+
+                    <div class="dish-image-wrapper">
+                        <img
+                                src="${item_img}${card.image}"
+                                alt="${card.name}"
+                                loading="eager"
+                                class="dish-image"/>
                     </div>
-                    <p class="dish-description">Handmade tagliatelle tossed in a creamy truffle sauce, wild mushrooms, and fresh
-                        herbs.</p>
-                    <div class="dish-actions">
-                        <div class="dish-meta"><img src="${gcv}icons/order/leaf.svg" alt=""
-                                                    class="meta-icon" /><span>Vegetarian</span></div><button type="button"
-                                                                                                             class="cjiayo-t-button add-button">Add to Cart</button>
+
+                    <div class="dish-content">
+                        <div class="dish-header">
+                            <h3 id="im690b" class="dish-name">${card.name}</h3>
+                            <span class="dish-price">
+                    $<fmt:formatNumber value="${card.basePrice}" type="number" minFractionDigits="2"/>
+                </span>
+                        </div>
+
+                        <p class="dish-description">
+                                ${card.shortDescription}
+                        </p>
+
+                        <div class="dish-actions">
+                                <div class="dish-meta">
+                                    <img src="${card_icon}${card.icon}"
+                                         alt=""
+                                         class="meta-icon"/>
+                                    <span>${card.category}</span>
+                                </div>
+
+                            <button type="button" class="cjiayo-t-button add-button">
+                                Add to Cart
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </article>
+                </article>
+            </c:forEach>
 <!-- ======================================================================================================================= -->
 
         </div>
@@ -107,7 +146,7 @@
             <div>
                 <h3 class="banner-title">Group order or special requests?</h3>
                 <p class="banner-subtitle">Contact our team and we’ll make it seamless.</p>
-            </div><a href="./contact-about.html" class="cjiayo-t-button banner-cta">Contact Us</a>
+            </div><a href="contact-about" class="cjiayo-t-button banner-cta">Contact Us</a>
         </div>
     </section>
 </main><button type="button" aria-controls="cartSidebar" aria-expanded="false" id="cartToggle"

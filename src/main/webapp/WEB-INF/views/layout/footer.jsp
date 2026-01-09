@@ -17,7 +17,7 @@
                 <li><a href="order" class="gjs-t-link footer-link">Order</a></li>
                 <li><a href="reservation" class="gjs-t-link footer-link">Reservations</a></li>
                 <li><a href="profile" class="gjs-t-link footer-link">Account</a></li>
-                <li><a href="feedback-reviews" class="gjs-t-link footer-link">Feedback &amp; Reviews</a></li>
+                <li><a href="reviews" class="gjs-t-link footer-link">Feedback &amp; Reviews</a></li>
             </ul>
         </div>
         <div class="footer-column-contact">

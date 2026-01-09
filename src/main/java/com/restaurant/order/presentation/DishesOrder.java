@@ -1,10 +1,9 @@
-package com.restaurant.item.presentation;
+package com.restaurant.order.presentation;
 
 import com.restaurant.common.time.SystemTimeProvider;
 import com.restaurant.infrastructure.mybatis.SqlSessionFactoryProvider;
 import com.restaurant.item.application.ItemService;
 import com.restaurant.item.application.ItemTranslator;
-import com.restaurant.item.domain.model.Item;
 import com.restaurant.item.infrastructure.persistence.ItemRepositoryImpl;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -13,8 +12,8 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import java.io.IOException;
 
-@WebServlet(name = "DishDetail", value = "/dish-detail")
-public class DishDetail extends HttpServlet {
+@WebServlet(name = "DishesOrder", value = "/order")
+public class DishesOrder extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private ItemService service;
 
@@ -26,18 +25,13 @@ public class DishDetail extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String idParam = request.getParameter("id");
-        if (idParam != null) {
-            try {
-                int itemId = Integer.parseInt(idParam);
-                Item item = service.get(itemId);
-                request.setAttribute("detailed", ItemTranslator.detail(item));
-                request.getRequestDispatcher("/WEB-INF/views/menu/dish-detail.jsp").forward(request, response);
-            } catch (NumberFormatException e) {
-                response.sendRedirect("dishes");
-            }
-        } else {
-            response.sendRedirect("dishes");
+        try {
+            request.setAttribute("cards", service.all().stream().map(ItemTranslator::menuCard).toList());
+            request.getRequestDispatcher("/WEB-INF/views/menu/order.jsp")
+                    .forward(request, response);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
         }
     }
 

@@ -1,9 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <c:set var="gcv" value="${pageContext.request.contextPath}/assets/" scope="application" />
-<c:set var="item_img" value="${gcv}uploads/images/items/" scope="application" />
+<c:set var="item_img" value="${gcv}uploads/images/item/" scope="application" />
 <c:set var="item_recipe" value="${gcv}uploads/recipes/" scope="application" />
-<c:set var="inv_img" value="${gcv}uploads/images/ingredients/" scope="application" />
+<c:set var="inv_img" value="${gcv}uploads/images/ingredient/" scope="application" />
+<c:set var="card_icon" value="${gcv}uploads/icons/card/" scope="application" />
 <html>
 <head>
     <title>Title</title>
