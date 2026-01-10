@@ -33,6 +33,8 @@ public class Checkout extends HttpServlet {
         Type listType = new TypeToken<List<CartItem>>(){}.getType();
         List<CartItem> cartItems = gson.fromJson(cartJson, listType);
 
+        cartItems.forEach(CartItem::autoColor);
+
         double total = cartItems.stream()
                 .mapToDouble(i -> i.getPrice() * i.getQty())
                 .sum();
