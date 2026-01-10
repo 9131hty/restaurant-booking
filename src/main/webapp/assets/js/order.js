@@ -41,12 +41,12 @@
         setTimeout(() => cartToggle.classList.remove('spark-on'), 950);
     }
 
-    function addItem({ id, name, price, image }) {
+    function addItem({ id, name, price, category, subCategory, image }) {
         const existing = cartState.items.find(i => i.id === id);
         if (existing) {
             existing.qty += 1;
         } else {
-            cartState.items.push({ id, name, price, qty: 1, image });
+            cartState.items.push({ id, name, price, category, subCategory, qty: 1, image });
         }
         renderCart();
     }
@@ -166,9 +166,11 @@
             const id = card.getAttribute('data-id');
             const name = card.getAttribute('data-name');
             const price = Number(card.getAttribute('data-price'));
+            const category = card.getAttribute('data-category');
+            const subCategory = card.getAttribute('data-sub-category');
             const imageEl = card.querySelector('.dish-image');
             const image = imageEl ? imageEl.getAttribute('src') : '';
-            addItem({ id, name, price, image });
+            addItem({ id, name, price, category, subCategory, image });
 
             addBtn.classList.add('ring-2', 'ring-[rgba(228,216,200,0.9)]');
             setTimeout(() => addBtn.classList.remove('ring-2', 'ring-[rgba(228,216,200,0.9)]'), 350);

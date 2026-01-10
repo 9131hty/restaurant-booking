@@ -99,6 +99,7 @@
                         data-name="${card.name}"
                         data-price="${card.basePrice}"
                         data-category="${card.category}"
+                        data-sub-category="${card.subCategory}"
                         class="group dish-card"
                         id="card-${card.id}">
 
