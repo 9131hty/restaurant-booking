@@ -17,13 +17,6 @@
     const searchInput = $('#searchInput-2');
     const filterPills = $$('.filter-pill');
     const itemsGrid = $('#itemsGrid');
-    const checkoutForm = document.getElementById('checkoutForm');
-    const cartDataInput = document.getElementById('cartDataInput');
-    if (checkoutForm) {
-        checkoutForm.addEventListener('submit', function () {
-            cartDataInput.value = JSON.stringify(cartState.items);
-        });
-    }
 
     function toggleCart(forceOpen = null) {
         const isOpen = cartSidebar.classList.contains('is-open');
@@ -226,6 +219,14 @@
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') toggleCart(false);
     });
+
+    const checkoutForm = document.getElementById('checkoutForm');
+    const cartDataInput = document.getElementById('cartDataInput');
+    if (checkoutForm) {
+        checkoutForm.addEventListener('submit', function () {
+            cartDataInput.value = JSON.stringify(cartState.items);
+        });
+    }
 })();
 
 (function () {

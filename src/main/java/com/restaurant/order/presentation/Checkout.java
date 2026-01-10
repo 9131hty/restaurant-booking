@@ -2,7 +2,7 @@ package com.restaurant.order.presentation;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.restaurant.item.domain.model.dump.CartItem;
+import com.restaurant.item.domain.model.CartItem;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -17,6 +17,11 @@ public class Checkout extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String cartJson = request.getParameter("cartData");
 
         if (cartJson == null || cartJson.isEmpty()) {
@@ -32,15 +37,10 @@ public class Checkout extends HttpServlet {
                 .mapToDouble(i -> i.getPrice() * i.getQty())
                 .sum();
 
-        request.setAttribute("cartItems", cartItems);
-        request.setAttribute("total", total);
+        HttpSession session = request.getSession();
+        session.setAttribute("CART", cartItems);
+        request.setAttribute("snapshot-total", total);
 
-        request.getRequestDispatcher("/WEB-INF/views/menu/checkout.jsp")
-                .forward(request, response);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        request.getRequestDispatcher("/WEB-INF/views/menu/checkout.jsp").forward(request, response);
     }
 }
